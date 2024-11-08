@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://nfnw4bvne1oj"]
 
-[ext_resource type="Script" path="res://warrior_test.gd" id="1_wk8k1"]
+[ext_resource type="Script" path="res://Classes/Warrior/warrior_test.gd" id="1_wk8k1"]
 
 [node name="Warrior Test" type="CanvasLayer" node_paths=PackedStringArray("label", "timer")]
 script = ExtResource("1_wk8k1")

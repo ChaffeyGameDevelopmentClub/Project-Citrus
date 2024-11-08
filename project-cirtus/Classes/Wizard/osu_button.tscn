@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c07iwwujdkwie"]
 
 [ext_resource type="Texture2D" uid="uid://7rxq2hohasgr" path="res://icon.svg" id="1_vvqsm"]
-[ext_resource type="Script" path="res://osu_button.gd" id="2_jkq8e"]
+[ext_resource type="Script" path="res://Classes/Wizard/osu_button.gd" id="2_jkq8e"]
 
 [node name="Osu Button" type="TextureButton"]
 offset_right = 40.0

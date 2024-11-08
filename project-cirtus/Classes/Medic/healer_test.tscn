@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxhtip4rta4tn"]
+
+[ext_resource type="PackedScene" uid="uid://dwktbc1ywynem" path="res://Classes/Medic/matching_item.tscn" id="1_2aduk"]
+
+[node name="Healer Test" type="CanvasLayer"]
+
+[node name="GridContainer" type="GridContainer" parent="."]
+custom_minimum_size = Vector2(16, 16)
+anchors_preset = -1
+anchor_right = 0.434
+anchor_bottom = 0.926
+offset_right = 0.0319824
+offset_bottom = -0.0480347
+columns = 10
+
+[node name="Matching Item" parent="GridContainer" instance=ExtResource("1_2aduk")]
+layout_mode = 2
+
+[node name="Matching Item2" parent="GridContainer" instance=ExtResource("1_2aduk")]
+layout_mode = 2
+
+[node name="Matching Item3" parent="GridContainer" instance=ExtResource("1_2aduk")]
+layout_mode = 2
+
+[node name="Matching Item4" parent="GridContainer" instance=ExtResource("1_2aduk")]
+layout_mode = 2
