@@ -1,0 +1,71 @@
+[gd_scene load_steps=7 format=3 uid="uid://sufofdknnymk"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_v855o"]
+[ext_resource type="Texture2D" uid="uid://7rxq2hohasgr" path="res://icon.svg" id="2_wte4d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_umgc2"]
+atlas = ExtResource("2_wte4d")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xt4yw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_umgc2")
+}],
+"loop": true,
+"name": &"Idle Left",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Idle Right",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Walk Down",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Walk Left",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Walk Right",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Walk Up",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l2qsy"]
+height = 1.5
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5khnb"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_v855o")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_xt4yw")
+animation = &"Idle Left"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_l2qsy")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.940975, 0.338475, 0, -0.338475, 0.940975, 0, 0.948849, 3.6103)
+current = true
+
+[node name="Area3D" type="Area3D" parent="." groups=["Player"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("CapsuleShape3D_5khnb")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
