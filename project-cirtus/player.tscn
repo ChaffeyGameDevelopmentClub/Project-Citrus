@@ -9,6 +9,11 @@ region = Rect2(0, 0, 128, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xt4yw"]
 animations = [{
+"frames": [],
+"loop": true,
+"name": &"Idle Down",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_umgc2")
@@ -20,6 +25,11 @@ animations = [{
 "frames": [],
 "loop": true,
 "name": &"Idle Right",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Idle Up",
 "speed": 5.0
 }, {
 "frames": [],
@@ -48,13 +58,14 @@ height = 1.5
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5khnb"]
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("sprite")]
 script = ExtResource("1_v855o")
+sprite = NodePath("AnimatedSprite3D")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_xt4yw")
-animation = &"Idle Left"
+animation = &"Idle Down"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_l2qsy")
