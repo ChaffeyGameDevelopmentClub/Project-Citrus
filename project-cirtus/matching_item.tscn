@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwktbc1ywynem"]
+
+[ext_resource type="Texture2D" uid="uid://b0wgwo0qgy2n" path="res://gems.png" id="1_26630"]
+[ext_resource type="Script" path="res://matching_item.gd" id="1_vjgdo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y2f2k"]
+atlas = ExtResource("1_26630")
+region = Rect2(0, 0, 16, 16)
+
+[node name="Matching Item" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = SubResource("AtlasTexture_y2f2k")
+stretch_mode = 0
+script = ExtResource("1_vjgdo")
