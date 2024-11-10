@@ -22,3 +22,5 @@ texture_normal = ExtResource("2_1tgal")
 texture_pressed = ExtResource("2_1tgal")
 ignore_texture_size = true
 stretch_mode = 0
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
