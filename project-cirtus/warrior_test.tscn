@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://nfnw4bvne1oj"]
+
+[ext_resource type="Script" path="res://warrior_test.gd" id="1_wk8k1"]
+
+[node name="Warrior Test" type="CanvasLayer" node_paths=PackedStringArray("label", "timer")]
+script = ExtResource("1_wk8k1")
+label = NodePath("Label")
+timer = NodePath("Timer")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Timer" type="Timer" parent="."]

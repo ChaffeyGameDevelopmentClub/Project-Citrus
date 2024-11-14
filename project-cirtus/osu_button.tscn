@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c07iwwujdkwie"]
+
+[ext_resource type="Texture2D" uid="uid://7rxq2hohasgr" path="res://icon.svg" id="1_vvqsm"]
+[ext_resource type="Script" path="res://osu_button.gd" id="2_jkq8e"]
+
+[node name="Osu Button" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_vvqsm")
+texture_pressed = ExtResource("1_vvqsm")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("2_jkq8e")
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
