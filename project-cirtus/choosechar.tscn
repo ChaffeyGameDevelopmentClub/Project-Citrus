@@ -125,7 +125,7 @@ position = Vector2(282, 171)
 scale = Vector2(5.47917, 3.35417)
 sprite_frames = SubResource("SpriteFrames_3rw8h")
 animation = &"wizardidle"
-frame_progress = 0.927686
+frame_progress = 0.298941
 
 [node name="medicchar" type="TextureButton" parent="."]
 layout_mode = 0
@@ -140,7 +140,7 @@ stretch_mode = 0
 position = Vector2(296, 176)
 scale = Vector2(5.70833, 3.33854)
 sprite_frames = SubResource("SpriteFrames_kj7d7")
-frame_progress = 0.660502
+frame_progress = 0.403082
 
 [node name="tankchar" type="TextureButton" parent="."]
 layout_mode = 0
@@ -155,7 +155,7 @@ stretch_mode = 0
 position = Vector2(295.75, 157.5)
 scale = Vector2(5.42187, 3.13542)
 sprite_frames = SubResource("SpriteFrames_qh0u7")
-frame_progress = 0.243956
+frame_progress = 0.986533
 
 [node name="warriorchar" type="TextureButton" parent="."]
 layout_mode = 0
@@ -170,7 +170,7 @@ stretch_mode = 0
 position = Vector2(296, 152)
 scale = Vector2(5.71875, 3.04167)
 sprite_frames = SubResource("SpriteFrames_vu5lp")
-frame_progress = 0.561614
+frame_progress = 0.304197
 
 [connection signal="pressed" from="wizardchar" to="." method="_on_wizardchar_pressed"]
 [connection signal="pressed" from="medicchar" to="." method="_on_medicchar_pressed"]
