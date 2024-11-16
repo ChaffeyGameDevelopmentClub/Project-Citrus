@@ -1,7 +1,106 @@
-[gd_scene load_steps=3 format=3 uid="uid://cjmshy0rp8apr"]
+[gd_scene load_steps=20 format=3 uid="uid://cjmshy0rp8apr"]
 
 [ext_resource type="Texture2D" uid="uid://7rxq2hohasgr" path="res://icon.svg" id="1_5ud07"]
 [ext_resource type="Script" path="res://choosechar.gd" id="1_gtmvs"]
+[ext_resource type="Texture2D" uid="uid://dlo5qas3cw4u7" path="res://iris images/wizardcat-Sheet.png" id="3_2e7n1"]
+[ext_resource type="Texture2D" uid="uid://b1vb5c3ucw80l" path="res://iris images/mediccat-Sheet.png" id="4_wxvpf"]
+[ext_resource type="Texture2D" uid="uid://cb3nrcfk8nqp" path="res://iris images/tankcat-Sheet.png" id="5_4l0rg"]
+[ext_resource type="Texture2D" uid="uid://dmjbuvl8w3pii" path="res://iris images/warriorcat-Sheet.png" id="6_kwolm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rii2m"]
+atlas = ExtResource("3_2e7n1")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_brcsm"]
+atlas = ExtResource("3_2e7n1")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sfxqh"]
+atlas = ExtResource("3_2e7n1")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3rw8h"]
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_rii2m")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_brcsm")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_sfxqh")
+}],
+"loop": true,
+"name": &"wizardidle",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ca871"]
+atlas = ExtResource("4_wxvpf")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_slfer"]
+atlas = ExtResource("4_wxvpf")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kj7d7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ca871")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_slfer")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n0p7g"]
+atlas = ExtResource("5_4l0rg")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_657r0"]
+atlas = ExtResource("5_4l0rg")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qh0u7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n0p7g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_657r0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g5x02"]
+atlas = ExtResource("6_kwolm")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f06do"]
+atlas = ExtResource("6_kwolm")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vu5lp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g5x02")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f06do")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="choosechar" type="Control"]
 layout_mode = 3
@@ -21,6 +120,13 @@ offset_bottom = 344.0
 texture_normal = ExtResource("1_5ud07")
 stretch_mode = 0
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="wizardchar"]
+position = Vector2(282, 171)
+scale = Vector2(5.47917, 3.35417)
+sprite_frames = SubResource("SpriteFrames_3rw8h")
+animation = &"wizardidle"
+frame_progress = 0.927686
+
 [node name="medicchar" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 555.0
@@ -29,6 +135,12 @@ offset_right = 1147.0
 offset_bottom = 341.0
 texture_normal = ExtResource("1_5ud07")
 stretch_mode = 0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="medicchar"]
+position = Vector2(296, 176)
+scale = Vector2(5.70833, 3.33854)
+sprite_frames = SubResource("SpriteFrames_kj7d7")
+frame_progress = 0.660502
 
 [node name="tankchar" type="TextureButton" parent="."]
 layout_mode = 0
@@ -39,6 +151,12 @@ offset_bottom = 653.0
 texture_normal = ExtResource("1_5ud07")
 stretch_mode = 0
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="tankchar"]
+position = Vector2(295.75, 157.5)
+scale = Vector2(5.42187, 3.13542)
+sprite_frames = SubResource("SpriteFrames_qh0u7")
+frame_progress = 0.243956
+
 [node name="warriorchar" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 554.0
@@ -47,6 +165,12 @@ offset_right = 1143.0
 offset_bottom = 652.0
 texture_normal = ExtResource("1_5ud07")
 stretch_mode = 0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="warriorchar"]
+position = Vector2(296, 152)
+scale = Vector2(5.71875, 3.04167)
+sprite_frames = SubResource("SpriteFrames_vu5lp")
+frame_progress = 0.561614
 
 [connection signal="pressed" from="wizardchar" to="." method="_on_wizardchar_pressed"]
 [connection signal="pressed" from="medicchar" to="." method="_on_medicchar_pressed"]
