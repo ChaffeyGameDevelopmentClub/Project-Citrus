@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://dja8cnt4n6kxp"]
+
+[ext_resource type="Script" path="res://mainmenu.gd" id="1_muoqh"]
+[ext_resource type="Texture2D" uid="uid://7rxq2hohasgr" path="res://icon.svg" id="2_nnshl"]
+
+[node name="mainmenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_muoqh")
+
+[node name="play" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 510.0
+offset_top = 132.0
+offset_right = 638.0
+offset_bottom = 260.0
+texture_normal = ExtResource("2_nnshl")
+
+[node name="options" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 511.0
+offset_top = 302.0
+offset_right = 639.0
+offset_bottom = 430.0
+texture_normal = ExtResource("2_nnshl")
+
+[node name="exit" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 517.0
+offset_top = 460.0
+offset_right = 645.0
+offset_bottom = 588.0
+texture_normal = ExtResource("2_nnshl")
+
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]

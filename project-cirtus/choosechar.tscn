@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjmshy0rp8apr"]
+
+[ext_resource type="Texture2D" uid="uid://7rxq2hohasgr" path="res://icon.svg" id="1_5ud07"]
+[ext_resource type="Script" path="res://choosechar.gd" id="1_gtmvs"]
+
+[node name="choosechar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gtmvs")
+
+[node name="wizardchar" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -2.0
+offset_right = 566.0
+offset_bottom = 344.0
+texture_normal = ExtResource("1_5ud07")
+stretch_mode = 0
+
+[node name="medicchar" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 555.0
+offset_top = -4.0
+offset_right = 1147.0
+offset_bottom = 341.0
+texture_normal = ExtResource("1_5ud07")
+stretch_mode = 0
+
+[node name="tankchar" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = -7.0
+offset_top = 338.0
+offset_right = 569.0
+offset_bottom = 653.0
+texture_normal = ExtResource("1_5ud07")
+stretch_mode = 0
+
+[node name="warriorchar" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 554.0
+offset_top = 339.0
+offset_right = 1143.0
+offset_bottom = 652.0
+texture_normal = ExtResource("1_5ud07")
+stretch_mode = 0
+
+[connection signal="pressed" from="wizardchar" to="." method="_on_wizardchar_pressed"]
+[connection signal="pressed" from="medicchar" to="." method="_on_medicchar_pressed"]
+[connection signal="pressed" from="tankchar" to="." method="_on_tankchar_pressed"]
+[connection signal="pressed" from="warriorchar" to="." method="_on_warriorchar_pressed"]
