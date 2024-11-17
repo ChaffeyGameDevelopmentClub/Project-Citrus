@@ -12,16 +12,20 @@ func _process(delta: float) -> void:
 
 
 func _on_wizardchar_pressed() -> void:
-	get_tree().quit()
+	Global.character = "wizard"
+	get_tree().change_scene_to_file("res://test_stage2iris.tscn")
 
 
 func _on_medicchar_pressed() -> void:
-	pass # Replace with function body.
+	Global.character = "medic"
+	get_tree().change_scene_to_file("res://test_stage2iris.tscn")
 
 
 func _on_tankchar_pressed() -> void:
-	pass # Replace with function body.
+	Global.character = "tank"
+	get_tree().change_scene_to_file("res://test_stage2iris.tscn")
 
 
 func _on_warriorchar_pressed() -> void:
-	pass # Replace with function body.
+	Global.character = "warrior"
+	get_tree().change_scene_to_file("res://test_stage2iris.tscn")
