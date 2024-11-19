@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://di7jwbpyentle"]
+
+[ext_resource type="Script" path="res://Classes/Tank/tank_test.gd" id="1_3myro"]
+[ext_resource type="Texture2D" uid="uid://7rxq2hohasgr" path="res://icon.svg" id="2_k8lig"]
+
+[node name="Tank Test" type="CanvasLayer" node_paths=PackedStringArray("attack_bar", "label")]
+script = ExtResource("1_3myro")
+attack_bar = NodePath("Attack Bar")
+label = NodePath("Label")
+
+[node name="Attack Bar" type="TextureProgressBar" parent="."]
+offset_right = 128.0
+offset_bottom = 128.0
+scale = Vector2(8.7467, 1.22168)
+max_value = 300.0
+texture_progress = ExtResource("2_k8lig")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 481.0
+offset_top = 320.0
+offset_right = 521.0
+offset_bottom = 593.0
+theme_override_font_sizes/font_size = 200

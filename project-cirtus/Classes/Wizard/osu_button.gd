@@ -1,6 +1,6 @@
 extends TextureButton
 
-var circle = preload("res://osu_button.tscn")
+var circle = preload("res://Classes/Wizard/osu_button.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,7 +14,6 @@ func _process(delta: float) -> void:
 
 
 func _on_button_down() -> void:
-	print("bruh")
 	create_button()
 	queue_free()
 

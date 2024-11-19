@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://suw2qvgcbwi8"]
+
+[ext_resource type="Script" path="res://enemy_fight_test.gd" id="1_8gxao"]
+[ext_resource type="Texture2D" uid="uid://7rxq2hohasgr" path="res://icon.svg" id="2_0lte3"]
+
+[node name="Enemy Fight Test" type="CanvasLayer" node_paths=PackedStringArray("bar", "label")]
+script = ExtResource("1_8gxao")
+bar = NodePath("TextureProgressBar")
+label = NodePath("Label")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(842, 340)
+texture = ExtResource("2_0lte3")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_left = 779.0
+offset_top = 428.0
+offset_right = 907.0
+offset_bottom = 556.0
+scale = Vector2(1.13891, 0.266897)
+max_value = 1000.0
+texture_progress = ExtResource("2_0lte3")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 803.0
+offset_top = 238.0
+offset_right = 880.0
+offset_bottom = 261.0

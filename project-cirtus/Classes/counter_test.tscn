@@ -1,0 +1,68 @@
+[gd_scene load_steps=8 format=3 uid="uid://bldfpqnvqa32w"]
+
+[ext_resource type="Script" path="res://Classes/counter_test.gd" id="1_g8dwl"]
+[ext_resource type="Texture2D" uid="uid://b0wgwo0qgy2n" path="res://gems.png" id="2_q5mex"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1cx6k"]
+atlas = ExtResource("2_q5mex")
+region = Rect2(48, 80, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a6i4m"]
+size = Vector2(72, 111)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jblf4"]
+atlas = ExtResource("2_q5mex")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2xmn7"]
+radius = 21.0
+height = 100.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7v0g4"]
+atlas = ExtResource("2_q5mex")
+region = Rect2(32, 0, 16, 16)
+
+[node name="Counter Test" type="CanvasLayer" node_paths=PackedStringArray("good_area", "player_area", "label")]
+script = ExtResource("1_g8dwl")
+good_area = NodePath("Circle/Good Area")
+player_area = NodePath("Circle/Player Area")
+label = NodePath("Label")
+
+[node name="Circle" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(30, 30)
+texture = SubResource("AtlasTexture_1cx6k")
+
+[node name="Good Area" type="Area2D" parent="Circle"]
+scale = Vector2(0.0333333, 0.0333333)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Circle/Good Area"]
+position = Vector2(0, -110)
+shape = SubResource("RectangleShape2D_a6i4m")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Circle/Good Area"]
+position = Vector2(0, -110)
+scale = Vector2(10, 10)
+texture = SubResource("AtlasTexture_jblf4")
+
+[node name="Player Area" type="Area2D" parent="Circle"]
+scale = Vector2(0.0333333, 0.0333333)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Circle/Player Area"]
+position = Vector2(0, -110)
+shape = SubResource("CapsuleShape2D_2xmn7")
+
+[node name="Sprite2D" type="Sprite2D" parent="Circle/Player Area"]
+position = Vector2(0, -110)
+scale = Vector2(7, 7)
+texture = SubResource("AtlasTexture_7v0g4")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 328.0
+offset_top = 36.0
+offset_right = 368.0
+offset_bottom = 105.0
+theme_override_font_sizes/font_size = 50
+
+[connection signal="area_entered" from="Circle/Good Area" to="." method="_on_good_area_area_entered"]
+[connection signal="area_exited" from="Circle/Good Area" to="." method="_on_good_area_area_exited"]
