@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="starter_stats" load_steps=2 format=3 uid="uid://chejoi7ie7ty1"]
+
+[ext_resource type="Script" path="res://resources/jobs/Starter stats per class/starter_stats.gd" id="1_014kd"]
+
+[resource]
+script = ExtResource("1_014kd")
+job_name = "Job"
+max_hp = 0
+max_mp = 0
+speed = 0
+defense = 0
+strength = 0

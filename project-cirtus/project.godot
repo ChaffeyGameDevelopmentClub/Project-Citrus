@@ -38,7 +38,8 @@ enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 [file_customization]
 
 folder_colors={
-"res://Dummy/": "gray"
+"res://Dummy/": "gray",
+"res://resources/": "pink"
 }
 
 [global_group]
