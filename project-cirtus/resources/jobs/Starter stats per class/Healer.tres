@@ -4,9 +4,9 @@
 
 [resource]
 script = ExtResource("1_014kd")
-job_name = "Job"
-max_hp = 0
-max_mp = 0
-speed = 0
-defense = 0
-strength = 0
+job_name = "Healer"
+max_hp = 20
+max_mp = 5
+speed = 5
+defense = 5
+strength = 5
