@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dvq1vihqtpl03"
-path="res://.godot/imported/weapon store medium gear.glb-eca431fb8cfe8694ef770e189b351606.scn"
+uid="uid://c43l5rra4xtu0"
+path="res://.godot/imported/weapon store medium gear.glb-d1dd85a7d475b28dd5e31042b2cb128e.scn"
 
 [deps]
 
-source_file="res://Building Scenes/Blacksmith/weapon store medium gear.glb"
-dest_files=["res://.godot/imported/weapon store medium gear.glb-eca431fb8cfe8694ef770e189b351606.scn"]
+source_file="res://Building Scenes/weapon store medium gear.glb"
+dest_files=["res://.godot/imported/weapon store medium gear.glb-d1dd85a7d475b28dd5e31042b2cb128e.scn"]
 
 [params]
 

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ctd5jfbkj8sla"
-path="res://.godot/imported/weapon store smoke.glb-df3f30c546c9ebabca8e1863839cb6fe.scn"
+uid="uid://dtde2rb5bp15i"
+path="res://.godot/imported/weapon store base.glb-b2645508635511deb7098d0f15a938bf.scn"
 
 [deps]
 
-source_file="res://Building Scenes/Blacksmith/weapon store smoke.glb"
-dest_files=["res://.godot/imported/weapon store smoke.glb-df3f30c546c9ebabca8e1863839cb6fe.scn"]
+source_file="res://Building Scenes/weapon store base.glb"
+dest_files=["res://.godot/imported/weapon store base.glb-b2645508635511deb7098d0f15a938bf.scn"]
 
 [params]
 

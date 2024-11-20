@@ -1,0 +1,85 @@
+[gd_scene load_steps=8 format=3 uid="uid://cdthm6jtrkxx7"]
+
+[ext_resource type="PackedScene" uid="uid://dtde2rb5bp15i" path="res://Building Scenes/weapon store base.glb" id="1_j80r6"]
+[ext_resource type="Script" path="res://Building Scenes/Blacksmith/Animated/blacksmith_animation.gd" id="1_lowlo"]
+[ext_resource type="PackedScene" uid="uid://da6sl5ma7w7df" path="res://Building Scenes/weapon store big gear.glb" id="2_qdion"]
+[ext_resource type="PackedScene" uid="uid://c43l5rra4xtu0" path="res://Building Scenes/weapon store medium gear.glb" id="3_ostl2"]
+
+[sub_resource type="Animation" id="Animation_u6idt"]
+resource_name = "BlackSmith"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("weapon store big gear:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 6.28319)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("weapon store medium gear:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 6.28319)]
+}
+
+[sub_resource type="Animation" id="Animation_jv3gp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("weapon store big gear:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("weapon store medium gear:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kce7h"]
+_data = {
+"BlackSmith": SubResource("Animation_u6idt"),
+"RESET": SubResource("Animation_jv3gp")
+}
+
+[node name="Blacksmith" type="Node3D"]
+script = ExtResource("1_lowlo")
+
+[node name="weapon store base" parent="." instance=ExtResource("1_j80r6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.279076, 0, -0.592574)
+
+[node name="weapon store big gear" parent="." instance=ExtResource("2_qdion")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.16767, 10.8296, -4.74334)
+
+[node name="weapon store medium gear" parent="." instance=ExtResource("3_ostl2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.40532, 6.69027, 8.99515)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_kce7h")
+}
