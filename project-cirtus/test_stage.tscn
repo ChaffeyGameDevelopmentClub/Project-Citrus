@@ -71,4 +71,4 @@ timeline = "test"
 shape = SubResource("SphereShape3D_1namg")
 
 [node name="Goblin" parent="." instance=ExtResource("3_0t5v1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.7919, 1, -1)

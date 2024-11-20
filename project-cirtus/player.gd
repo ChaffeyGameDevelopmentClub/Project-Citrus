@@ -8,23 +8,32 @@ const JUMP_VELOCITY = 4.5
 
 var in_shadow:bool = false
 var shadow_timer: float = 0.0
-
+var lock = false
 var can_interact: bool = false
+var postionL
+func fight(postion):
+	lock = true
+	postionL = postion
+	print("connecting")
 
-func fight():
-	pass
 
 func _ready() -> void:
-	pass
 	#Dialogic.signal_event.connect(_on_dialogic_signal)
-	
+	SignalBus.connect("fighting", fight)
 func _process(delta: float) -> void:
 	if in_shadow:
 		shadow_timer += delta
 		if shadow_timer>=3:
 			sprite.set_modulate(Color(0,0,0,1))
+	
 
 func _physics_process(delta: float) -> void:
+	
+	if lock:
+		global_position.x = move_toward(global_position.x,postionL.x,delta * 2)
+		global_position.z = move_toward(global_position.z,postionL.z,delta * 2)
+		
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -58,6 +67,9 @@ func _physics_process(delta: float) -> void:
 		sprite.play(idle_anim)
 
 	move_and_slide()
+
+
+
 
 func _input(event: InputEvent) -> void:
 	pass

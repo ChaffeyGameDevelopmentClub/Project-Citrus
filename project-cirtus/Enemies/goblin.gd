@@ -6,8 +6,9 @@ const JUMP_VELOCITY = 4.5
 signal fighting
 
 func fight():
-	fight_P_left = global_position - Vector3 (10, 0, 0,)
-	emit_signal("fighting") 
+	fight_P_left = global_position - Vector3 (3, 0, 0,)
+	SignalBus.emit_signal("fighting",fight_P_left) 
+	
 	
 
 func _physics_process(delta: float) -> void:
