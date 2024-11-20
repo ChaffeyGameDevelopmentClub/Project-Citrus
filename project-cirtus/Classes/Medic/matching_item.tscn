@@ -6,7 +6,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n408y"]
 size = Vector2(50, 50)
 
-[node name="Matching Item" type="RigidBody2D" node_paths=PackedStringArray("button")]
+[node name="Matching Item" type="RigidBody2D" node_paths=PackedStringArray("button") groups=["Match"]]
+can_sleep = false
 lock_rotation = true
 script = ExtResource("1_vjgdo")
 button = NodePath("Button")

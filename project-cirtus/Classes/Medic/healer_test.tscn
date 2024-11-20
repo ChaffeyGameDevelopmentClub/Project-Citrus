@@ -16,7 +16,7 @@ b = Vector2(500, 1000)
 script = ExtResource("1_xqi7l")
 
 [node name="Floor" type="StaticBody2D" parent="."]
-position = Vector2(25, 564)
+position = Vector2(25, 450)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
 position = Vector2(-83, 0)

@@ -42,3 +42,6 @@ func swap(data:Dictionary):
 	gem_data["pressed_texture"] = data["pressed_texture"]
 	button.texture_normal = gem_data["normal_texture"]
 	button.texture_pressed = gem_data["pressed_texture"]
+
+func die():
+	queue_free()
