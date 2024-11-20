@@ -11,6 +11,9 @@ var shadow_timer: float = 0.0
 
 var can_interact: bool = false
 
+func fight():
+	pass
+
 func _ready() -> void:
 	pass
 	#Dialogic.signal_event.connect(_on_dialogic_signal)

@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnkrxpt0ud8ce"]
+
+[ext_resource type="Script" path="res://Enemies/goblin.gd" id="1_5uc5b"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ssty0"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_3ospp"]
+radius = 3.31292
+
+[node name="Goblin" type="CharacterBody3D"]
+script = ExtResource("1_5uc5b")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_ssty0")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_3ospp")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]

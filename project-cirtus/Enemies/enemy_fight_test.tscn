@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://suw2qvgcbwi8"]
 
-[ext_resource type="Script" path="res://enemy_fight_test.gd" id="1_8gxao"]
+[ext_resource type="Script" path="res://Enemies/enemy_fight_test.gd" id="1_8gxao"]
 [ext_resource type="Texture2D" uid="uid://7rxq2hohasgr" path="res://icon.svg" id="2_0lte3"]
 
 [node name="Enemy Fight Test" type="CanvasLayer" node_paths=PackedStringArray("bar", "label")]
