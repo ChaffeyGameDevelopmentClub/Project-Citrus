@@ -1,6 +1,6 @@
 #extends Node2D
-#extends CanvasLayer
-extends Control
+extends CanvasLayer
+#extends Control
 
 @export var falling_timer:Timer
 @export var label:Label

@@ -16,13 +16,7 @@ b = Vector2(500, 1000)
 a = Vector2(0, -45)
 b = Vector2(500, -45)
 
-[node name="Healer Test" type="Control" node_paths=PackedStringArray("falling_timer", "label")]
-z_index = 2
-layout_mode = 3
-anchor_right = 0.44
-anchor_bottom = 0.723
-offset_right = -506.88
-offset_bottom = -468.504
+[node name="Healer Test" type="CanvasLayer" node_paths=PackedStringArray("falling_timer", "label")]
 script = ExtResource("1_xqi7l")
 falling_timer = NodePath("Falling Checker/Timer")
 label = NodePath("Label")
@@ -52,7 +46,6 @@ shape = SubResource("SegmentShape2D_p32g1")
 [node name="Timer" type="Timer" parent="Falling Checker"]
 
 [node name="Label" type="Label" parent="."]
-layout_mode = 0
 offset_left = 527.0
 offset_top = 33.0
 offset_right = 567.0
