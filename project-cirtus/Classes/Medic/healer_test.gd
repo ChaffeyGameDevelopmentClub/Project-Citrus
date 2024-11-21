@@ -52,7 +52,6 @@ func _ready() -> void:
 	SignalBus.connect("match_clicked", update_clicked)
 	SignalBus.connect("grid_update", update_grid)
 	SignalBus.connect("spawn_new_match", spawn_new_match)
-	SignalBus.connect("update_spawn_match", update_spawn_match)
 	for i in rows:
 		gem_grid.append({})
 	create_grid()
@@ -61,11 +60,6 @@ func _ready() -> void:
 	add_child(new_disabler)
 	
 	#print(gem_grid)
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
 func update_button_disabler():
 	new_disabler.move_to_front()
@@ -86,12 +80,11 @@ func spawn_new_match(id:int):
 	call_deferred("add_child", new_shape)
 	new_disabler.move_to_front()
 
-func update_spawn_match(id:int, new_gem):
-	pass
 
 func create_spawners():
 	for i in columns:
 		var new_spawner = spawner.instantiate()
+		@warning_ignore("integer_division")
 		new_spawner.position = Vector2(i*shape_size+x_offset+shape_size/2, -shape_size/2) 
 		new_spawner.id = i
 		add_child(new_spawner)
@@ -100,7 +93,9 @@ func create_appliers():
 	for i in columns:
 		for j in rows:
 			var new_applier = applier.instantiate()
+			@warning_ignore("integer_division")
 			new_applier.position.x =i*shape_size+x_offset+shape_size/2
+			@warning_ignore("integer_division")
 			new_applier.position.y = j*shape_size+y_offset+shape_size/2
 			new_applier.id = str(j)+str(i)
 			add_child(new_applier)
@@ -182,9 +177,13 @@ func check_for_combos():
 	var first_id:int= int(first_click_data["id"])
 	var second_id:int = int(second_click_data["id"])
 	for i in range(0,3):
+		@warning_ignore("integer_division")
 		check_horiz(first_id%10+i, int(first_id/10))
+		@warning_ignore("integer_division")
 		check_horiz(second_id%10+i, int(second_id/10))
+		@warning_ignore("integer_division")
 		check_vert(first_id%10, int(first_id/10+i))
+		@warning_ignore("integer_division")
 		check_vert(second_id%10, int(second_id/10+i))
 	matched_tiles = remove_duplicates(matched_tiles)
 
@@ -243,7 +242,7 @@ func _on_falling_checker_body_entered(body: Node2D) -> void:
 		stable_bodies+=1
 		falling_timer.stop()
 		if stable_bodies==9:
-			falling_timer.start(.5)
+			falling_timer.start(.25)
 
 
 func _on_falling_checker_body_exited(body: Node2D) -> void:

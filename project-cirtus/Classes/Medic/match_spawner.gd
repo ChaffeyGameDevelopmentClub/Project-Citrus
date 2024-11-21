@@ -6,6 +6,5 @@ var id:int = 0
 func _ready() -> void:
 	SignalBus.emit_signal("spawn_new_match", id)
 
-func _on_body_exited(body: Node2D) -> void:
-	SignalBus.emit_signal("update_spawn_match", id,  body)
+func _on_body_exited(_body: Node2D) -> void:
 	SignalBus.emit_signal("spawn_new_match", id)

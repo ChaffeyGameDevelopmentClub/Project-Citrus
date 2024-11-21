@@ -8,14 +8,10 @@ radius = 1.0
 [node name="Match Spawner" type="Area2D" node_paths=PackedStringArray("timer")]
 z_index = 2
 script = ExtResource("1_jdbjh")
-timer = NodePath("Timer")
+timer = NodePath("")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -5)
 shape = SubResource("CircleShape2D_n4dq3")
 
-[node name="Timer" type="Timer" parent="."]
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
