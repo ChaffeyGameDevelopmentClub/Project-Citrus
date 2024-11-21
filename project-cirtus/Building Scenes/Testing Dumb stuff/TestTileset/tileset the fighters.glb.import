@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://doyxm4stn5n2t"
-path="res://.godot/imported/weapon store smoke.glb-4fd1694a4f664c49d0a7c71d8cda01ad.scn"
+uid="uid://d4ciw5uc61yw0"
+path="res://.godot/imported/tileset the fighters.glb-e28bb3545c05f37d2acf65cdcea75a89.scn"
 
 [deps]
 
-source_file="res://Building Scenes/weapon store smoke.glb"
-dest_files=["res://.godot/imported/weapon store smoke.glb-4fd1694a4f664c49d0a7c71d8cda01ad.scn"]
+source_file="res://Building Scenes/Testing Dumb stuff/TestTileset/tileset the fighters.glb"
+dest_files=["res://.godot/imported/tileset the fighters.glb-e28bb3545c05f37d2acf65cdcea75a89.scn"]
 
 [params]
 

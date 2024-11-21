@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://beb52is31ha5k"
-path="res://.godot/imported/tilesettw.glb-569d492e2451c34646aa1ed5855e06a7.scn"
+uid="uid://c43l5rra4xtu0"
+path="res://.godot/imported/weapon store medium gear.glb-192dfc8b5e7a74cf15e86a6a110895d3.scn"
 
 [deps]
 
-source_file="res://Building Scenes/Testing Dumb stuff/TestTileset/tilesettw.glb"
-dest_files=["res://.godot/imported/tilesettw.glb-569d492e2451c34646aa1ed5855e06a7.scn"]
+source_file="res://Building Scenes/Blacksmith/Parts/weapon store medium gear.glb"
+dest_files=["res://.godot/imported/weapon store medium gear.glb-192dfc8b5e7a74cf15e86a6a110895d3.scn"]
 
 [params]
 

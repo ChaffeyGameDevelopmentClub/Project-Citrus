@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://cdthm6jtrkxx7"]
 
-[ext_resource type="PackedScene" uid="uid://dtde2rb5bp15i" path="res://Building Scenes/weapon store base.glb" id="1_j80r6"]
+[ext_resource type="PackedScene" uid="uid://dtde2rb5bp15i" path="res://Building Scenes/Blacksmith/Parts/weapon store base.glb" id="1_j80r6"]
 [ext_resource type="Script" path="res://Building Scenes/Blacksmith/Animated/blacksmith_animation.gd" id="1_lowlo"]
-[ext_resource type="PackedScene" uid="uid://da6sl5ma7w7df" path="res://Building Scenes/weapon store big gear.glb" id="2_qdion"]
-[ext_resource type="PackedScene" uid="uid://c43l5rra4xtu0" path="res://Building Scenes/weapon store medium gear.glb" id="3_ostl2"]
+[ext_resource type="PackedScene" uid="uid://da6sl5ma7w7df" path="res://Building Scenes/Blacksmith/Parts/weapon store big gear.glb" id="2_qdion"]
+[ext_resource type="PackedScene" uid="uid://c43l5rra4xtu0" path="res://Building Scenes/Blacksmith/Parts/weapon store medium gear.glb" id="3_ostl2"]
 
 [sub_resource type="Animation" id="Animation_u6idt"]
 resource_name = "BlackSmith"
