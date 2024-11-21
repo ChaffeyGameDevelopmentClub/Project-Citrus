@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://5xfcdct5nic6"]
-
-[ext_resource type="PackedScene" uid="uid://d4ciw5uc61yw0" path="res://Building Scenes/Testing Dumb stuff/TestTileset/tileset the fighters.glb" id="1_t3uiw"]
-
-[node name="tileset the fighters" instance=ExtResource("1_t3uiw")]

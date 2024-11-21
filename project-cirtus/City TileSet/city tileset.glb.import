@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d4ciw5uc61yw0"
-path="res://.godot/imported/tileset the fighters.glb-e28bb3545c05f37d2acf65cdcea75a89.scn"
+uid="uid://gowcbop81fw0"
+path="res://.godot/imported/city tileset.glb-eb12d1ccd7ccf85de18ce929e8debd2b.scn"
 
 [deps]
 
-source_file="res://Building Scenes/Testing Dumb stuff/TestTileset/tileset the fighters.glb"
-dest_files=["res://.godot/imported/tileset the fighters.glb-e28bb3545c05f37d2acf65cdcea75a89.scn"]
+source_file="res://City TileSet/city tileset.glb"
+dest_files=["res://.godot/imported/city tileset.glb-eb12d1ccd7ccf85de18ce929e8debd2b.scn"]
 
 [params]
 
