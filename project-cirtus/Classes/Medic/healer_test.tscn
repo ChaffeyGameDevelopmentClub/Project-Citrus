@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bxhtip4rta4tn"]
+[gd_scene load_steps=6 format=3 uid="uid://bxhtip4rta4tn"]
 
 [ext_resource type="Script" path="res://Classes/Medic/healer_test.gd" id="1_xqi7l"]
 
@@ -12,8 +12,20 @@ b = Vector2(0, 1000)
 a = Vector2(500, 0)
 b = Vector2(500, 1000)
 
-[node name="Healer Test" type="CanvasLayer"]
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_p32g1"]
+a = Vector2(0, -45)
+b = Vector2(500, -45)
+
+[node name="Healer Test" type="Control" node_paths=PackedStringArray("falling_timer", "label")]
+z_index = 2
+layout_mode = 3
+anchor_right = 0.44
+anchor_bottom = 0.723
+offset_right = -506.88
+offset_bottom = -468.504
 script = ExtResource("1_xqi7l")
+falling_timer = NodePath("Falling Checker/Timer")
+label = NodePath("Label")
 
 [node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2(25, 450)
@@ -31,3 +43,22 @@ shape = SubResource("SegmentShape2D_q7v8p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Right"]
 shape = SubResource("SegmentShape2D_cdtms")
+
+[node name="Falling Checker" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Falling Checker"]
+shape = SubResource("SegmentShape2D_p32g1")
+
+[node name="Timer" type="Timer" parent="Falling Checker"]
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 527.0
+offset_top = 33.0
+offset_right = 567.0
+offset_bottom = 56.0
+theme_override_font_sizes/font_size = 20
+
+[connection signal="body_entered" from="Falling Checker" to="." method="_on_falling_checker_body_entered"]
+[connection signal="body_exited" from="Falling Checker" to="." method="_on_falling_checker_body_exited"]
+[connection signal="timeout" from="Falling Checker/Timer" to="." method="_on_timer_timeout"]

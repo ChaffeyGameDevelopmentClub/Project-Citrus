@@ -15,11 +15,6 @@ func _ready() -> void:
 	SignalBus.connect("match_update", update_texture)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
 func _on_texture_button_pressed() -> void:
 	SignalBus.emit_signal("match_clicked", gem_data)
 	print("ID: "+ str(gem_data["id"])+" Texture: "+ str(gem_data["normal_texture"]))

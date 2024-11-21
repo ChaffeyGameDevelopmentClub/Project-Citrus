@@ -1,15 +1,11 @@
 extends Area2D
+@export var timer:Timer
 
+var id:int = 0
 
-
-var gem = null
-
-
-
-func _on_body_entered(body: Node2D) -> void:
-	gem = body
-
+func _ready() -> void:
+	SignalBus.emit_signal("spawn_new_match", id)
 
 func _on_body_exited(body: Node2D) -> void:
-	gem = null
-	
+	SignalBus.emit_signal("update_spawn_match", id,  body)
+	SignalBus.emit_signal("spawn_new_match", id)
