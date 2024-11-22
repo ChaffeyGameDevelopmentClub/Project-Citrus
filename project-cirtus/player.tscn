@@ -70,9 +70,10 @@ height = 1.5
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5khnb"]
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("sprite")]
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("sprite", "timerP")]
 script = ExtResource("1_v855o")
 sprite = NodePath("AnimatedSprite3D")
+timerP = NodePath("Timer")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 texture_filter = 0
@@ -91,4 +92,9 @@ current = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("CapsuleShape3D_5khnb")
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
