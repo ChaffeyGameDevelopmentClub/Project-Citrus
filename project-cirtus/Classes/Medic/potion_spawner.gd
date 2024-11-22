@@ -4,7 +4,7 @@ extends Area2D
 var id:int = 0
 
 func _ready() -> void:
-	SignalBus.emit_signal("spawn_new_match", id)
+	SignalBus.emit_signal("spawn_new_potion", id)
 
 func _on_body_exited(_body: Node2D) -> void:
-	SignalBus.emit_signal("spawn_new_match", id)
+	SignalBus.emit_signal("spawn_new_potion", id)

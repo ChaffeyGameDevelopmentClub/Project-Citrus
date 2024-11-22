@@ -1,5 +1,5 @@
-#extends CanvasLayer
-extends Node2D
+extends CanvasLayer
+#extends Node2D
 var rune = preload("res://Classes/Wizard/osu_button.tscn")
 
 var red_texture = preload("res://test_sprites/30.png")
