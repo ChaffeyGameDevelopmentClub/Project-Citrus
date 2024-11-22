@@ -42,6 +42,15 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
+func update_animation():
+	var animation_prefix = Global.character + "_"
+	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	velocity = direction + speed
+	
+	if direction != Vector2.ZERO:
+		last_direction = direction.normalized()
+
+
 func _input(event: InputEvent) -> void:
 	pass
 

@@ -21,12 +21,8 @@ Global="*res://global.gd"
 
 [dialogic]
 
-directories/dch_directory={
-"test_character": "res://test_character.dch"
-}
-directories/dtl_directory={
-"test": "res://test.dtl"
-}
+directories/dch_directory={}
+directories/dtl_directory={}
 
 [display]
 
