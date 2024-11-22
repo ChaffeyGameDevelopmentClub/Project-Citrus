@@ -1,12 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://c13hw4yn8woxp"]
 
-[ext_resource type="PackedScene" uid="uid://c07iwwujdkwie" path="res://Classes/Wizard/osu_button.tscn" id="1_kef4u"]
+[ext_resource type="Script" path="res://Classes/Wizard/wizard_test.gd" id="1_o4om4"]
 
-[node name="Wizard Test" type="CanvasLayer"]
-layer = 0
+[node name="Wizard Test" type="Node2D"]
+script = ExtResource("1_o4om4")
 
-[node name="Osu Button" parent="." instance=ExtResource("1_kef4u")]
-offset_left = 542.0
-offset_top = 307.0
-offset_right = 582.0
-offset_bottom = 347.0
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(566, 321)
+zoom = Vector2(0.8, 0.8)
