@@ -34,13 +34,14 @@ func update_texture(data_1:Dictionary, data_2:Dictionary):
 	
 	button.texture_normal = potion_data["normal_texture"]
 	button.texture_pressed = potion_data["pressed_texture"]
-
+'''
+## replaces the data of the potion with the new data
 func swap(data:Dictionary):
 	potion_data["normal_texture"] = data["normal_texture"]
 	potion_data["pressed_texture"] = data["pressed_texture"]
 	button.texture_normal = potion_data["normal_texture"]
 	button.texture_pressed = potion_data["pressed_texture"]
-'''
+
 ## clears the potion
 func die():
 	queue_free()

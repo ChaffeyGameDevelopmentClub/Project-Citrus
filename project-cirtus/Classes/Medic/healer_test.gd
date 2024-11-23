@@ -18,6 +18,7 @@ extends CanvasLayer
 var applier = preload("res://Classes/Medic/id_applier_area.tscn")
 var spawner = preload("res://Classes/Medic/potion_spawner.tscn")
 ## In this case I just instantiated it now bc I only needed to do it once
+## Also, it is used to disable input between games and also while the game is still calculating data
 var input_disabler = preload("res://Classes/Medic/input_disabler.tscn")
 var new_disabler = input_disabler.instantiate()
 

@@ -1,5 +1,5 @@
 extends Area2D
-@export var timer:Timer
+## Used to spawn potions at the top
 
 var id:int = 0
 
