@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dkr5qe2v225ib"]
 
-[ext_resource type="Script" path="res://Inventory/Objects/chest.gd" id="1_pb0en"]
+[ext_resource type="Script" path="res://Inventory/Scripts/chest.gd" id="1_pb0en"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_348cu"]
 

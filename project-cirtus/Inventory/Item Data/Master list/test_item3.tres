@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://c4y4kx7lgst4l"]
 
-[ext_resource type="Script" path="res://Inventory/Scripts/item_data.gd" id="1_k0ans"]
+[ext_resource type="Script" path="res://Inventory/Scripts/item_data.gd" id="1_h1h4v"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_e5urn"]
 load_path = "res://.godot/imported/test-inventory.png-60335ecacea86239aee9067d8656d9ff.s3tc.ctex"
@@ -10,7 +10,7 @@ atlas = SubResource("CompressedTexture2D_e5urn")
 region = Rect2(32, 0, 32, 32)
 
 [resource]
-script = ExtResource("1_k0ans")
+script = ExtResource("1_h1h4v")
 item_name = "test_item_3"
 item_description = "Use it!"
 is_item_stackable = false
