@@ -1,12 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://dnjs4mkfpdqb5"]
+[gd_scene load_steps=5 format=3 uid="uid://dnjs4mkfpdqb5"]
 
 [ext_resource type="Script" path="res://test_char_test_delete_later.gd" id="1_mtmby"]
+[ext_resource type="Resource" uid="uid://drk4ionub4vsd" path="res://Inventory/test/player_test.tres" id="2_b1kuh"]
 [ext_resource type="Texture2D" uid="uid://7rxq2hohasgr" path="res://icon.svg" id="2_m6oa5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3b5i3"]
 
 [node name="Test_Inventory" type="CharacterBody3D"]
 script = ExtResource("1_mtmby")
+inventory_data = ExtResource("2_b1kuh")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 texture = ExtResource("2_m6oa5")

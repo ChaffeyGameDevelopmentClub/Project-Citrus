@@ -5,4 +5,4 @@ load_path = "res://.godot/imported/test-inventory.png-60335ecacea86239aee9067d86
 
 [resource]
 atlas = SubResource("CompressedTexture2D_e5urn")
-region = Rect2(32, 64, 32, 32)
+region = Rect2(96, 32, 32, 32)

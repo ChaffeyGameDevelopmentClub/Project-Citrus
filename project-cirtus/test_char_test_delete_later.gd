@@ -1,9 +1,16 @@
 extends CharacterBody3D
-
+#These are the only lines for player stuff so don't worry
+@export var inventory_data: InventoryData
+signal toggle_inventory()
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
-
+#This is also for the inventory
+func _unhandled_input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("Inventory"):
+		toggle_inventory.emit()
+		pass
+	pass
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
