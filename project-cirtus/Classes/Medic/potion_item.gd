@@ -12,13 +12,16 @@ extends RigidBody2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	SignalBus.connect("potion_match_update", update_texture)
+	pass
+	#SignalBus.connect("potion_match_update", update_texture)
 
 
 func _on_texture_button_pressed() -> void:
 	SignalBus.emit_signal("potion_clicked", potion_data)
-	print("ID: "+ str(potion_data["id"])+" Texture: "+ str(potion_data["normal_texture"]))
+	#print("ID: "+ str(potion_data["id"])+" Texture: "+ str(potion_data["normal_texture"]))
 
+
+'''
 func update_texture(data_1:Dictionary, data_2:Dictionary):
 	if potion_data["id"]==data_1["id"]:
 		potion_data["normal_texture"] = data_2["normal_texture"]
@@ -31,6 +34,7 @@ func update_texture(data_1:Dictionary, data_2:Dictionary):
 	
 	button.texture_normal = potion_data["normal_texture"]
 	button.texture_pressed = potion_data["pressed_texture"]
+'''
 
 func swap(data:Dictionary):
 	potion_data["normal_texture"] = data["normal_texture"]

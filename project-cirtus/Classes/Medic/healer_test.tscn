@@ -1,6 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://bxhtip4rta4tn"]
+[gd_scene load_steps=13 format=3 uid="uid://bxhtip4rta4tn"]
 
 [ext_resource type="Script" path="res://Classes/Medic/healer_test.gd" id="1_xqi7l"]
+[ext_resource type="PackedScene" uid="uid://cmk3vvsemrhmd" path="res://Classes/Medic/color_chooser.tscn" id="2_l8vbf"]
+[ext_resource type="Texture2D" uid="uid://7rxq2hohasgr" path="res://icon.svg" id="3_dh8wj"]
+[ext_resource type="Texture2D" uid="uid://ctgy3ev2lcibp" path="res://test_sprites/00.png" id="4_28j4o"]
+[ext_resource type="Texture2D" uid="uid://mrxaue35gccg" path="res://test_sprites/01.png" id="5_ol55p"]
+[ext_resource type="Texture2D" uid="uid://bi83v5g4v1l2r" path="res://test_sprites/02.png" id="6_lwe3r"]
+[ext_resource type="Texture2D" uid="uid://cla6vydv71g60" path="res://test_sprites/03.png" id="7_nj75b"]
+[ext_resource type="Texture2D" uid="uid://bf8mpk5esupxf" path="res://test_sprites/04.png" id="8_vscbo"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_oc7c6"]
 b = Vector2(1500, 0)
@@ -16,10 +23,12 @@ b = Vector2(500, 1000)
 a = Vector2(0, -45)
 b = Vector2(500, -45)
 
-[node name="Healer Test" type="CanvasLayer" node_paths=PackedStringArray("falling_timer", "label")]
+[node name="Healer Test" type="CanvasLayer" node_paths=PackedStringArray("label", "label2", "falling_timer", "game_timer")]
 script = ExtResource("1_xqi7l")
-falling_timer = NodePath("Falling Checker/Timer")
 label = NodePath("Label")
+label2 = NodePath("Label2")
+falling_timer = NodePath("Falling Checker/Falling Timer")
+game_timer = NodePath("Game Timer")
 
 [node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2(25, 450)
@@ -43,15 +52,80 @@ shape = SubResource("SegmentShape2D_cdtms")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Falling Checker"]
 shape = SubResource("SegmentShape2D_p32g1")
 
-[node name="Timer" type="Timer" parent="Falling Checker"]
+[node name="Falling Timer" type="Timer" parent="Falling Checker"]
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 646.0
+offset_top = 246.0
+offset_right = 686.0
+offset_bottom = 269.0
 
 [node name="Label" type="Label" parent="."]
 offset_left = 527.0
 offset_top = 33.0
-offset_right = 567.0
-offset_bottom = 56.0
+offset_right = 626.0
+offset_bottom = 61.0
 theme_override_font_sizes/font_size = 20
+
+[node name="Random Chooser" parent="." instance=ExtResource("2_l8vbf")]
+offset_left = 513.0
+offset_top = 242.0
+offset_right = 553.0
+offset_bottom = 282.0
+texture_normal = ExtResource("3_dh8wj")
+texture_pressed = ExtResource("3_dh8wj")
+color = "random"
+
+[node name="Red Chooser" parent="." instance=ExtResource("2_l8vbf")]
+offset_left = 574.0
+offset_top = 239.0
+offset_right = 614.0
+offset_bottom = 279.0
+texture_normal = ExtResource("4_28j4o")
+texture_pressed = ExtResource("4_28j4o")
+color = "red"
+
+[node name="Green Chooser2" parent="." instance=ExtResource("2_l8vbf")]
+offset_left = 518.0
+offset_top = 292.0
+offset_right = 558.0
+offset_bottom = 332.0
+texture_normal = ExtResource("5_ol55p")
+texture_pressed = ExtResource("5_ol55p")
+color = "green"
+
+[node name="Blue Chooser3" parent="." instance=ExtResource("2_l8vbf")]
+offset_left = 577.0
+offset_top = 299.0
+offset_right = 617.0
+offset_bottom = 339.0
+texture_normal = ExtResource("6_lwe3r")
+texture_pressed = ExtResource("6_lwe3r")
+color = "blue"
+
+[node name="Yellow Chooser4" parent="." instance=ExtResource("2_l8vbf")]
+offset_left = 513.0
+offset_top = 343.0
+offset_right = 553.0
+offset_bottom = 383.0
+texture_normal = ExtResource("7_nj75b")
+texture_pressed = ExtResource("7_nj75b")
+color = "yellow"
+
+[node name="Purple Chooser5" parent="." instance=ExtResource("2_l8vbf")]
+offset_left = 594.0
+offset_top = 351.0
+offset_right = 634.0
+offset_bottom = 391.0
+texture_normal = ExtResource("8_vscbo")
+texture_pressed = ExtResource("8_vscbo")
+color = "purple"
+
+[node name="Game Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
 
 [connection signal="body_entered" from="Falling Checker" to="." method="_on_falling_checker_body_entered"]
 [connection signal="body_exited" from="Falling Checker" to="." method="_on_falling_checker_body_exited"]
-[connection signal="timeout" from="Falling Checker/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Falling Checker/Falling Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Game Timer" to="." method="_on_game_timer_timeout"]

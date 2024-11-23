@@ -2,8 +2,11 @@
 extends CanvasLayer
 #extends Control
 
-@export var falling_timer:Timer
 @export var label:Label
+@export var label2:Label
+
+@export var falling_timer:Timer
+@export var game_timer:Timer
 
 @onready var potion = preload("res://Classes/Medic/potion_item.tscn")
 var applier = preload("res://Classes/Medic/id_applier_area.tscn")
@@ -26,7 +29,7 @@ var new_disabler = input_disabler.instantiate()
 
 var possible_potions:Array = [red, green, blue, yellow, purple]
 
-var pressed_textures = {
+var pressed_textures:Dictionary= {
 	red: red_pressed,
 	green:green_pressed,
 	blue:blue_pressed,
@@ -51,20 +54,45 @@ var matched_potions:Array = []
 
 var stable_potions:int =0
 
-var total_points:int
+var potion_points:Dictionary={
+	red:0,
+	green:0,
+	blue:0,
+	yellow:0,
+	purple:0
+}
+
+var name_to_texture:Dictionary ={
+	"red":red,
+	"green":green,
+	"blue":blue,
+	"yellow":yellow,
+	"purple":purple,
+}
+
+var desired_color: String = ""
+var game_started:bool = false
+
+var effect_multiplier:float
+
+enum Mode{HIGHSCORE, SELECTION}
+var current_mode = Mode.HIGHSCORE
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	SignalBus.connect("potion_clicked", update_clicked_potion)
 	SignalBus.connect("grid_update", update_grid)
 	SignalBus.connect("spawn_new_potion", spawn_new_potion)
+	SignalBus.connect("color_picked", color_picked)
 	for i in rows:
 		potion_grid.append({})
 	create_grid()
 	create_appliers()
 	create_spawners()
 	add_child(new_disabler)
-	
+	print(potion_points.values())
+	update_input_disabler()
+	new_disabler.mouse_filter = 0
 	#print(gem_grid)
 
 func update_input_disabler():
@@ -204,8 +232,6 @@ func check_horiz(i:int,j:int):
 				matched_potions.append(str(j)+str(i-1))
 				matched_potions.append(str(j)+str(i-2))
 
-
-
 func check_vert(i:int, j:int):
 	if j>1:
 		if i<9&&j<9:
@@ -225,15 +251,17 @@ func remove_duplicates(with_duplicates:Array)->Array:
 
 func remove_matched_potions(potions:Array):
 	for i in potions:
+		potion_points[potion_grid[int(i[0])][i].get_child(1).texture_normal] +=1
 		potion_grid[int(i[0])][i].die()
-	total_points+= potions.size()*10
-	label.text = str(total_points)
-	
-
+	#print(potion_points)
+	label.text = "Red Points: " + str(potion_points[red])+ "
+	Green Points: " + str(potion_points[green])+ "
+	Blue Points: " + str(potion_points[blue])+ "
+	Yellow Points: " + str(potion_points[yellow])+ "
+	Purple Points: " + str(potion_points[purple])
 
 func update_grid(id:String, body:Node):
 	potion_grid[int(id[0])][id]=body
-
 
 func check_grid():
 	for i in columns:
@@ -253,7 +281,6 @@ func _on_falling_checker_body_entered(body: Node2D) -> void:
 
 func _on_falling_checker_body_exited(body: Node2D) -> void:
 	if body.is_in_group("Potion"):
-		#print("cool")
 		stable_potions-=1
 		if new_disabler.mouse_filter==2:
 			new_disabler.mouse_filter = 0
@@ -261,7 +288,64 @@ func _on_falling_checker_body_exited(body: Node2D) -> void:
 
 func _on_timer_timeout() -> void:
 	check_grid()
-	new_disabler.mouse_filter = 2
+	if game_started:
+		new_disabler.mouse_filter = 2
 	remove_matched_potions(matched_potions)
 	matched_potions.clear()
 	falling_timer.stop()
+
+func color_picked(color:String):
+	if !game_started:
+		game_started = true
+		desired_color = color
+		if desired_color == "random":
+			current_mode = Mode.HIGHSCORE
+		else:
+			current_mode = Mode.SELECTION
+		start_game()
+		#print(color)
+
+func find_highest_color() -> CompressedTexture2D:
+	var max = red
+	for key in potion_points:
+		if potion_points[key]>potion_points[max]:
+			max = key
+	return max
+
+func end_game():
+	if current_mode == Mode.SELECTION:
+		effect_multiplier = get_effect_multiplier(potion_points[name_to_texture[desired_color]])
+	elif current_mode == Mode.HIGHSCORE:
+		var highest_color = find_highest_color()
+		desired_color = name_to_texture.find_key(highest_color)
+		effect_multiplier = get_effect_multiplier(potion_points[highest_color])
+	update_input_disabler()
+	new_disabler.mouse_filter = 0
+	print(desired_color)
+	print(effect_multiplier)
+	label2.text = desired_color + ": " +str(effect_multiplier)
+	game_started = false
+
+func start_game():
+	new_disabler.mouse_filter = 2
+	game_timer.start()
+	potion_points[red]=0
+	potion_points[green]=0
+	potion_points[blue]=0
+	potion_points[yellow]=0
+	potion_points[purple]=0
+	label.text = "Red Points: " + str(potion_points[red])+ "
+	Green Points: " + str(potion_points[green])+ "
+	Blue Points: " + str(potion_points[blue])+ "
+	Yellow Points: " + str(potion_points[yellow])+ "
+	Purple Points: " + str(potion_points[purple])
+	
+
+func get_effect_multiplier(points:int):
+	if points<=15:
+		return float(points)/15
+	if points>15:
+		return 1.0+(points-15.0)*.5
+
+func _on_game_timer_timeout() -> void:
+	end_game()
