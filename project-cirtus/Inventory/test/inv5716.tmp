@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://1w5wl0f3v0i1"]
+[gd_scene load_steps=11 format=3 uid="uid://1w5wl0f3v0i1"]
 
 [ext_resource type="MeshLibrary" uid="uid://l1wnhelltvv8" path="res://City TileSet/TS_CITY3.tres" id="1_nakns"]
 [ext_resource type="Script" path="res://Inventory/Scripts/main.gd" id="1_qlq65"]
@@ -7,9 +7,6 @@
 [ext_resource type="Script" path="res://Inventory/Scripts/inv_interface.gd" id="4_smg6h"]
 [ext_resource type="PackedScene" uid="uid://bc8n7jfpeitso" path="res://Inventory/GUI/slot.tscn" id="6_e7b2k"]
 [ext_resource type="PackedScene" uid="uid://dkr5qe2v225ib" path="res://Inventory/Objects/chest.tscn" id="7_8m3mk"]
-[ext_resource type="Script" path="res://Inventory/Inventory Data/inventory_data.gd" id="8_a2pyt"]
-[ext_resource type="Script" path="res://Inventory/Inventory Data/slot_data.gd" id="9_csb3s"]
-[ext_resource type="Resource" uid="uid://c1gx3yvdrmfor" path="res://Inventory/Item Data/Master list/test_item4.tres" id="10_lvypv"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qvgvk"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -23,90 +20,6 @@ background_mode = 2
 sky = SubResource("Sky_jrabj")
 tonemap_mode = 2
 glow_enabled = true
-
-[sub_resource type="Resource" id="Resource_v4xrv"]
-script = ExtResource("9_csb3s")
-item_data = ExtResource("10_lvypv")
-quantity = 1
-
-[sub_resource type="Resource" id="Resource_hm5m5"]
-script = ExtResource("9_csb3s")
-item_data = ExtResource("10_lvypv")
-quantity = 1
-
-[sub_resource type="Resource" id="Resource_qjey1"]
-script = ExtResource("9_csb3s")
-item_data = ExtResource("10_lvypv")
-quantity = 1
-
-[sub_resource type="Resource" id="Resource_5fgi4"]
-script = ExtResource("9_csb3s")
-item_data = ExtResource("10_lvypv")
-quantity = 1
-
-[sub_resource type="Resource" id="Resource_lf8ju"]
-script = ExtResource("9_csb3s")
-item_data = ExtResource("10_lvypv")
-quantity = 1
-
-[sub_resource type="Resource" id="Resource_brva8"]
-script = ExtResource("9_csb3s")
-item_data = ExtResource("10_lvypv")
-quantity = 1
-
-[sub_resource type="Resource" id="Resource_lm4pq"]
-script = ExtResource("9_csb3s")
-item_data = ExtResource("10_lvypv")
-quantity = 1
-
-[sub_resource type="Resource" id="Resource_ksgc1"]
-script = ExtResource("9_csb3s")
-item_data = ExtResource("10_lvypv")
-quantity = 1
-
-[sub_resource type="Resource" id="Resource_6wj00"]
-script = ExtResource("9_csb3s")
-item_data = ExtResource("10_lvypv")
-quantity = 1
-
-[sub_resource type="Resource" id="Resource_p4d4u"]
-script = ExtResource("9_csb3s")
-item_data = ExtResource("10_lvypv")
-quantity = 1
-
-[sub_resource type="Resource" id="Resource_3n681"]
-script = ExtResource("9_csb3s")
-item_data = ExtResource("10_lvypv")
-quantity = 1
-
-[sub_resource type="Resource" id="Resource_tcql8"]
-script = ExtResource("9_csb3s")
-item_data = ExtResource("10_lvypv")
-quantity = 1
-
-[sub_resource type="Resource" id="Resource_d77v4"]
-script = ExtResource("9_csb3s")
-item_data = ExtResource("10_lvypv")
-quantity = 1
-
-[sub_resource type="Resource" id="Resource_mvjfq"]
-script = ExtResource("9_csb3s")
-item_data = ExtResource("10_lvypv")
-quantity = 1
-
-[sub_resource type="Resource" id="Resource_qpp48"]
-script = ExtResource("9_csb3s")
-item_data = ExtResource("10_lvypv")
-quantity = 1
-
-[sub_resource type="Resource" id="Resource_yqnn2"]
-script = ExtResource("9_csb3s")
-item_data = ExtResource("10_lvypv")
-quantity = 1
-
-[sub_resource type="Resource" id="Resource_t7st8"]
-script = ExtResource("8_a2pyt")
-slot_datas = Array[ExtResource("9_csb3s")]([SubResource("Resource_v4xrv"), SubResource("Resource_hm5m5"), SubResource("Resource_qjey1"), SubResource("Resource_5fgi4"), SubResource("Resource_lf8ju"), SubResource("Resource_brva8"), SubResource("Resource_lm4pq"), SubResource("Resource_ksgc1"), SubResource("Resource_6wj00"), SubResource("Resource_p4d4u"), SubResource("Resource_3n681"), SubResource("Resource_tcql8"), SubResource("Resource_d77v4"), SubResource("Resource_mvjfq"), SubResource("Resource_qpp48"), SubResource("Resource_yqnn2")])
 
 [node name="Main" type="Node"]
 script = ExtResource("1_qlq65")
@@ -147,14 +60,6 @@ script = ExtResource("4_smg6h")
 [node name="Player Inventory" parent="InvTestWorld/UI/Inv Interface" instance=ExtResource("3_4ix7s")]
 layout_mode = 0
 
-[node name="External Inventory" parent="InvTestWorld/UI/Inv Interface" instance=ExtResource("3_4ix7s")]
-visible = false
-layout_mode = 0
-offset_left = 577.0
-offset_top = 6.0
-offset_right = 601.0
-offset_bottom = 30.0
-
 [node name="GrabbedSlot" parent="InvTestWorld/UI/Inv Interface" instance=ExtResource("6_e7b2k")]
 visible = false
 modulate = Color(1, 1, 1, 0.443137)
@@ -170,4 +75,3 @@ grow_vertical = 1
 
 [node name="Chest" parent="InvTestWorld" instance=ExtResource("7_8m3mk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.92182, 1.67135, -18.2818)
-inventory_data = SubResource("Resource_t7st8")

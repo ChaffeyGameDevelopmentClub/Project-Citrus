@@ -2,6 +2,10 @@ extends CharacterBody3D
 #These are the only lines for player stuff so don't worry
 @export var inventory_data: InventoryData
 signal toggle_inventory()
+@onready var touch: RayCast3D = $touch
+@onready var interactable: Sprite3D = $Interactable
+
+
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
@@ -9,11 +13,21 @@ const JUMP_VELOCITY = 4.5
 func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("Inventory"):
 		toggle_inventory.emit()
-		pass
+	if Input.is_action_just_pressed("Interact"):
+		Interact()
+		
 	pass
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
+	if touch.is_colliding():
+		interactable.show()
+	else:
+		interactable.hide()
+		
+		
+		
+		pass
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
@@ -33,3 +47,7 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+func Interact() -> void:
+	if touch.is_colliding():
+		touch.get_collider().player_interact()
+	pass
