@@ -7,5 +7,5 @@
 script = ExtResource("1_78ft1")
 item_name = "Benny"
 item_description = "Yo waddup"
-is_item_stackable = false
+is_item_stackable = true
 item_texture = ExtResource("1_rr6h1")

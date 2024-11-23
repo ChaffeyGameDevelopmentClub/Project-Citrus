@@ -149,12 +149,10 @@ offset_left = 16.0
 offset_top = 16.0
 offset_right = 1144.0
 offset_bottom = 634.0
-mouse_filter = 1
 script = ExtResource("4_smg6h")
 
 [node name="Player Inventory" parent="InvTestWorld/UI/Inv Interface" instance=ExtResource("3_4ix7s")]
 layout_mode = 0
-mouse_filter = 1
 
 [node name="External Inventory" parent="InvTestWorld/UI/Inv Interface" instance=ExtResource("3_4ix7s")]
 visible = false
@@ -163,7 +161,6 @@ offset_left = 577.0
 offset_top = 6.0
 offset_right = 601.0
 offset_bottom = 30.0
-mouse_filter = 1
 
 [node name="GrabbedSlot" parent="InvTestWorld/UI/Inv Interface" instance=ExtResource("6_e7b2k")]
 visible = false
@@ -177,7 +174,6 @@ offset_right = 64.0
 offset_bottom = 64.0
 grow_horizontal = 1
 grow_vertical = 1
-mouse_filter = 1
 
 [node name="Chest" parent="InvTestWorld" instance=ExtResource("7_8m3mk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.92182, 1.67135, -18.2818)

@@ -4,8 +4,9 @@ extends CharacterBody3D
 signal toggle_inventory()
 @onready var touch: RayCast3D = $touch
 @onready var interactable: Sprite3D = $Interactable
+@onready var player: CharacterBody3D = $"."
 
-
+var direction = 1
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
@@ -25,7 +26,10 @@ func _physics_process(delta: float) -> void:
 	else:
 		interactable.hide()
 		
-		
+	if Input.is_action_just_pressed("Left"): 
+		direction = -1
+	if Input.is_action_just_pressed("Right"):
+		direction = 1
 		
 		pass
 	if not is_on_floor():
@@ -52,6 +56,7 @@ func Interact() -> void:
 		touch.get_collider().player_interact()
 	pass
 	
-#func Get_drop_position() -> Vector3:
-	
-#	pass
+func Get_drop_position() -> Vector3:
+	var direction = player.transform.basis.x *2*direction
+	return player.global_position + direction
+	pass

@@ -1,6 +1,7 @@
 extends Node
 
 const PickUp = preload("res://Inventory/Objects/pick_up.tscn")
+@onready var player: CharacterBody3D = $InvTestWorld/Test_Inventory
 
 @onready var test_inventory: CharacterBody3D = $InvTestWorld/Test_Inventory
 @onready var inv_interface: Control = $"InvTestWorld/UI/Inv Interface"
@@ -23,7 +24,8 @@ func toggle_inventory_interface(external_inventory_owner = null) -> void:
 
 
 func _on_inv_interface_drop_slot_data(slot_data: SlotData) -> void:
+	print("Yosh!")
 	var pick_up=PickUp.instantiate()
 	pick_up.slot_data = slot_data
-	pick_up.position = Vector3.UP
+	pick_up.position = player.Get_drop_position()
 	add_child(pick_up)
