@@ -51,3 +51,7 @@ func Interact() -> void:
 	if touch.is_colliding():
 		touch.get_collider().player_interact()
 	pass
+	
+#func Get_drop_position() -> Vector3:
+	
+#	pass

@@ -147,12 +147,14 @@ layout_mode = 3
 anchors_preset = 0
 offset_left = 16.0
 offset_top = 16.0
-offset_right = 56.0
-offset_bottom = 56.0
+offset_right = 1144.0
+offset_bottom = 634.0
+mouse_filter = 1
 script = ExtResource("4_smg6h")
 
 [node name="Player Inventory" parent="InvTestWorld/UI/Inv Interface" instance=ExtResource("3_4ix7s")]
 layout_mode = 0
+mouse_filter = 1
 
 [node name="External Inventory" parent="InvTestWorld/UI/Inv Interface" instance=ExtResource("3_4ix7s")]
 visible = false
@@ -161,6 +163,7 @@ offset_left = 577.0
 offset_top = 6.0
 offset_right = 601.0
 offset_bottom = 30.0
+mouse_filter = 1
 
 [node name="GrabbedSlot" parent="InvTestWorld/UI/Inv Interface" instance=ExtResource("6_e7b2k")]
 visible = false
@@ -174,6 +177,7 @@ offset_right = 64.0
 offset_bottom = 64.0
 grow_horizontal = 1
 grow_vertical = 1
+mouse_filter = 1
 
 [node name="Chest" parent="InvTestWorld" instance=ExtResource("7_8m3mk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.92182, 1.67135, -18.2818)
@@ -182,3 +186,6 @@ inventory_data = SubResource("Resource_t7st8")
 [node name="pick_up" parent="." instance=ExtResource("7_jirhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 3, -10)
 slot_data = SubResource("Resource_yuwa7")
+
+[connection signal="drop_slot_data" from="InvTestWorld/UI/Inv Interface" to="." method="_on_inv_interface_drop_slot_data"]
+[connection signal="gui_input" from="InvTestWorld/UI/Inv Interface" to="InvTestWorld/UI/Inv Interface" method="_on_gui_input"]
