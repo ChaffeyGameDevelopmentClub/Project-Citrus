@@ -13,6 +13,7 @@ const Slot = preload("res://Inventory/GUI/slot.tscn")
 #	pass
 
 func set_inventory_data(inventory_data: InventoryData) -> void:
+	inventory_data.inventory_updated.connect(populate_grid)
 	populate_grid(inventory_data)
 	pass
 

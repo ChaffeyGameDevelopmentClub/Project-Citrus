@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://1w5wl0f3v0i1"]
+[gd_scene load_steps=10 format=3 uid="uid://1w5wl0f3v0i1"]
 
 [ext_resource type="MeshLibrary" uid="uid://l1wnhelltvv8" path="res://City TileSet/TS_CITY3.tres" id="1_nakns"]
 [ext_resource type="Script" path="res://Inventory/Scripts/main.gd" id="1_qlq65"]
 [ext_resource type="PackedScene" uid="uid://dnjs4mkfpdqb5" path="res://Inventory/test/char_in_test.tscn" id="2_87uho"]
 [ext_resource type="PackedScene" uid="uid://bd1cwiuvooq67" path="res://Inventory/GUI/inventory.tscn" id="3_4ix7s"]
 [ext_resource type="Script" path="res://Inventory/Scripts/inv_interface.gd" id="4_smg6h"]
+[ext_resource type="PackedScene" uid="uid://bc8n7jfpeitso" path="res://Inventory/GUI/slot.tscn" id="6_e7b2k"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qvgvk"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -57,3 +58,16 @@ script = ExtResource("4_smg6h")
 
 [node name="Player Inventory" parent="InvTestWorld/UI/Inv Interface" instance=ExtResource("3_4ix7s")]
 layout_mode = 0
+
+[node name="GrabbedSlot" parent="InvTestWorld/UI/Inv Interface" instance=ExtResource("6_e7b2k")]
+visible = false
+modulate = Color(1, 1, 1, 0.443137)
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 1
+grow_vertical = 1
