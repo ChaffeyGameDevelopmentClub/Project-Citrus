@@ -5,6 +5,7 @@ signal toggle_inventory()
 @onready var touch: RayCast3D = $touch
 @onready var interactable: Sprite3D = $Interactable
 @onready var player: CharacterBody3D = $"."
+const HEAL_PARTICLES = preload("res://Inventory/Shader Effects/heal_particles.tscn")
 
 var health : int  = 10
 
@@ -66,6 +67,8 @@ func Interact() -> void:
 func heal(heal_value:int)-> void:
 	health += heal_value
 	print(health)
+	var particle = HEAL_PARTICLES.instantiate()
+	add_child(particle)
 	
 	pass
 
