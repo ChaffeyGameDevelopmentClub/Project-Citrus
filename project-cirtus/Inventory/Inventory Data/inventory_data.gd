@@ -46,6 +46,12 @@ func use_slot_data(index:int) -> void:
 	var slot_data = slot_datas[index]
 	if not slot_data:
 		return
+	if slot_data.item_data is ItemDataConsumable:
+		slot_data.quantity -=1
+		if slot_data.quantity <1:
+			slot_datas[index] = null
+	inventory_updated.emit(self)
+	PlayerManagerItems.use_slot_data(slot_data)
 	print(slot_data.item_data.item_name)
 
 func pick_up_slot_data(slot_data:SlotData) -> bool:

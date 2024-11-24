@@ -6,11 +6,18 @@ signal toggle_inventory()
 @onready var interactable: Sprite3D = $Interactable
 @onready var player: CharacterBody3D = $"."
 
+var health : int  = 10
+
 var direction = 1
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
-#This is also for the inventory
+
+#This is also 
+func _ready() -> void:
+	PlayerManagerItems.player = self
+
+#This is alsoalso for the inventory
 func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("Inventory"):
 		toggle_inventory.emit()
@@ -18,7 +25,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		Interact()
 		
 	pass
-
+#You thought that was it? no there's more
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if touch.is_colliding():
@@ -30,7 +37,6 @@ func _physics_process(delta: float) -> void:
 		direction = -1
 	if Input.is_action_just_pressed("ui_left"):
 		direction = 1
-		
 		pass
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -51,11 +57,17 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+#these two functions are legit AWESOME! 
 func Interact() -> void:
 	if touch.is_colliding():
 		touch.get_collider().player_interact()
 	pass
-	
+
+func heal(heal_value:int)-> void:
+	health += heal_value
+	print(health)
+	pass
+
 func Get_drop_position() -> Vector3:
 	var direction = player.transform.basis.x *2*direction
 	return player.global_position + direction
