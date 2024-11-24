@@ -7,3 +7,6 @@ class_name ItemData
 @export_multiline var item_description : String = ""
 @export var is_item_stackable : bool = false
 @export var item_texture : AtlasTexture
+
+func use(target)-> void:
+	pass

@@ -26,9 +26,9 @@ func _physics_process(delta: float) -> void:
 	else:
 		interactable.hide()
 		
-	if Input.is_action_just_pressed("Left"): 
+	if Input.is_action_just_pressed("ui_right"): 
 		direction = -1
-	if Input.is_action_just_pressed("Right"):
+	if Input.is_action_just_pressed("ui_left"):
 		direction = 1
 		
 		pass

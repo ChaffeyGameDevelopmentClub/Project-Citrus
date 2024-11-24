@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://c1gx3yvdrmfor"]
 
-[ext_resource type="Script" path="res://Inventory/Scripts/item_data.gd" id="1_78ft1"]
+[ext_resource type="Script" path="res://Inventory/Inventory Data/item_data.gd" id="1_78ft1"]
 [ext_resource type="Texture2D" uid="uid://db7td1b3oc51u" path="res://Inventory/Item Data/Item Textures/benny.tres" id="1_rr6h1"]
 
 [resource]

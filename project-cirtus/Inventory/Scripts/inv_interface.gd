@@ -38,7 +38,7 @@ func clear_external_inventory() -> void:
 		inventory_data.inventory_interact.disconnect(on_inventory_interact)
 		external_inventory.clear_inventory_data(inventory_data)
 		
-		external_inventory.show()
+		external_inventory.hide()
 		external_inventory_owner = null
 
 func on_inventory_interact(inventory_data: InventoryData, index:int, button:int) -> void:
@@ -48,7 +48,7 @@ func on_inventory_interact(inventory_data: InventoryData, index:int, button:int)
 		[_, MOUSE_BUTTON_LEFT]:
 			grabbed_slot_data = inventory_data.drop_slot_data(grabbed_slot_data,index)
 		[null, MOUSE_BUTTON_RIGHT]:
-			pass
+			inventory_data.use_slot_data(index)
 		[_, MOUSE_BUTTON_RIGHT]:
 			grabbed_slot_data = inventory_data.drop_single_slot_data(grabbed_slot_data,index)
 	update_grabbed_slot()
@@ -76,3 +76,11 @@ func _on_gui_input(event: InputEvent) -> void:
 		update_grabbed_slot()
 				
 		
+
+
+func _on_visibility_changed() -> void:
+	if not visible and grabbed_slot_data:
+		drop_slot_data.emit(grabbed_slot_data)
+		grabbed_slot_data = null
+		update_grabbed_slot()
+	pass # Replace with function body.
