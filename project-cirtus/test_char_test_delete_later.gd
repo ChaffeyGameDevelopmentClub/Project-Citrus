@@ -66,6 +66,7 @@ func Interact() -> void:
 func heal(heal_value:int)-> void:
 	health += heal_value
 	print(health)
+	
 	pass
 
 func Get_drop_position() -> Vector3:
