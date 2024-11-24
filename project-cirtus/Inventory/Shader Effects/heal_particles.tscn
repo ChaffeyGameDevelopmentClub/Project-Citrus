@@ -1,10 +1,32 @@
-[gd_scene load_steps=7 format=3 uid="uid://bsa7brjifo1e5"]
+[gd_scene load_steps=13 format=3 uid="uid://bsa7brjifo1e5"]
 
 [ext_resource type="Script" path="res://Inventory/Shader Effects/heal_particles.gd" id="1_2qwdj"]
 [ext_resource type="Shader" path="res://Inventory/Shader Effects/heal_particles.gdshader" id="2_n4vip"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_xqdh8"]
 radius = 0.33
+
+[sub_resource type="Curve" id="Curve_cnlc4"]
+_data = [Vector2(0.0144928, 1), 0.0, 0.0, 0, 0, Vector2(0.449275, 0.384615), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_r58d7"]
+curve = SubResource("Curve_cnlc4")
+
+[sub_resource type="Curve" id="Curve_leii5"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_grp0m"]
+curve = SubResource("Curve_leii5")
+
+[sub_resource type="Curve" id="Curve_k8fh6"]
+max_value = 3.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.978261, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_1iwtl"]
+curve = SubResource("Curve_k8fh6")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_sb8ox"]
 orbit_velocity_min = -1.357
@@ -14,7 +36,10 @@ radial_velocity_max = 80.46
 gravity = Vector3(0, 0, 0)
 linear_accel_min = -2.23517e-06
 linear_accel_max = -2.23517e-06
-color = Color(5.96821e-06, 0.870399, 0.87138, 1)
+scale_curve = SubResource("CurveTexture_grp0m")
+scale_over_velocity_max = 86.22
+scale_over_velocity_curve = SubResource("CurveTexture_1iwtl")
+alpha_curve = SubResource("CurveTexture_r58d7")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vtdvm"]
 render_priority = 0
@@ -32,13 +57,14 @@ disabled = true
 
 [node name="HealParticles" type="GPUParticles3D" parent="."]
 emitting = false
-amount = 80
+amount = 100
 one_shot = true
+explosiveness = 1.0
+trail_lifetime = 0.1
 process_material = SubResource("ParticleProcessMaterial_sb8ox")
 draw_pass_1 = SubResource("RibbonTrailMesh_s1fgq")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 4.0
 one_shot = true
 autostart = true
 

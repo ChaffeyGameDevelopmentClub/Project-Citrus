@@ -6,7 +6,7 @@ signal toggle_inventory()
 @onready var interactable: Sprite3D = $Interactable
 @onready var player: CharacterBody3D = $"."
 const HEAL_PARTICLES = preload("res://Inventory/Shader Effects/heal_particles.tscn")
-
+const HEAL_TEXT = preload("res://Inventory/GUI/heal_text.tscn")
 var health : int  = 10
 
 var direction = 1
@@ -69,6 +69,9 @@ func heal(heal_value:int)-> void:
 	print(health)
 	var particle = HEAL_PARTICLES.instantiate()
 	add_child(particle)
+	var text = HEAL_TEXT.instantiate()
+	add_child(text)
+	text.Heal_text(heal_value)
 	
 	pass
 
