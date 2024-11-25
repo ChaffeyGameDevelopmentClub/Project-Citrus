@@ -1,9 +1,10 @@
-[gd_scene load_steps=34 format=3 uid="uid://1w5wl0f3v0i1"]
+[gd_scene load_steps=36 format=3 uid="uid://1w5wl0f3v0i1"]
 
 [ext_resource type="MeshLibrary" uid="uid://l1wnhelltvv8" path="res://City TileSet/TS_CITY3.tres" id="1_nakns"]
 [ext_resource type="Script" path="res://Inventory/Scripts/main.gd" id="1_qlq65"]
 [ext_resource type="PackedScene" uid="uid://dnjs4mkfpdqb5" path="res://Inventory/test/char_in_test.tscn" id="2_87uho"]
 [ext_resource type="PackedScene" uid="uid://bd1cwiuvooq67" path="res://Inventory/GUI/inventory.tscn" id="3_4ix7s"]
+[ext_resource type="Script" path="res://Inventory/Inventory Data/Inventory class/inventory_data_equip_armor.gd" id="4_7juqt"]
 [ext_resource type="Script" path="res://Inventory/Scripts/inv_interface.gd" id="4_smg6h"]
 [ext_resource type="PackedScene" uid="uid://bc8n7jfpeitso" path="res://Inventory/GUI/slot.tscn" id="6_e7b2k"]
 [ext_resource type="PackedScene" uid="uid://dkr5qe2v225ib" path="res://Inventory/Objects/chest.tscn" id="7_8m3mk"]
@@ -25,6 +26,10 @@ background_mode = 2
 sky = SubResource("Sky_jrabj")
 tonemap_mode = 2
 glow_enabled = true
+
+[sub_resource type="Resource" id="Resource_yd378"]
+script = ExtResource("4_7juqt")
+slot_datas = Array[ExtResource("9_csb3s")]([null])
 
 [sub_resource type="Resource" id="Resource_v4xrv"]
 script = ExtResource("9_csb3s")
@@ -135,6 +140,7 @@ data = {
 
 [node name="Test_Inventory" parent="InvTestWorld" instance=ExtResource("2_87uho")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.35857, 5.45767, -11.0916)
+equip_armor_data = SubResource("Resource_yd378")
 
 [node name="Camera3D" type="Camera3D" parent="InvTestWorld/Test_Inventory"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.56474)
@@ -153,6 +159,11 @@ script = ExtResource("4_smg6h")
 
 [node name="Player Inventory" parent="InvTestWorld/UI/Inv Interface" instance=ExtResource("3_4ix7s")]
 layout_mode = 0
+
+[node name="Equip Inventory2" parent="InvTestWorld/UI/Inv Interface" instance=ExtResource("3_4ix7s")]
+layout_mode = 0
+offset_top = 500.0
+offset_bottom = 524.0
 
 [node name="External Inventory" parent="InvTestWorld/UI/Inv Interface" instance=ExtResource("3_4ix7s")]
 visible = false

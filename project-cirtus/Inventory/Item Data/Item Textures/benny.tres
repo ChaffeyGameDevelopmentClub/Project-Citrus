@@ -1,6 +1,0 @@
-[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://db7td1b3oc51u"]
-
-[ext_resource type="Texture2D" uid="uid://b1up0domrkaha" path="res://Inventory/Item Data/Item Textures/benny.png" id="1_7ahuh"]
-
-[resource]
-atlas = ExtResource("1_7ahuh")

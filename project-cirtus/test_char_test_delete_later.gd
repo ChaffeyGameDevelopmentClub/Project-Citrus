@@ -11,6 +11,9 @@ var health : int  = 10
 
 var direction = 1
 
+#For armor and weapons 
+@export var equip_armor_data : InventoryDataEquipArmor
+
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
