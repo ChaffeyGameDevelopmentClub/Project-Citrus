@@ -1,14 +1,15 @@
 [gd_scene load_steps=4 format=3 uid="uid://dwktbc1ywynem"]
 
-[ext_resource type="Script" path="res://Classes/Medic/matching_item.gd" id="1_vjgdo"]
-[ext_resource type="Texture2D" uid="uid://7rxq2hohasgr" path="res://icon.svg" id="2_1tgal"]
+[ext_resource type="Script" path="res://Classes/Medic/potion_item.gd" id="1_lpi5a"]
+[ext_resource type="Texture2D" uid="uid://7rxq2hohasgr" path="res://icon.svg" id="2_qeqe6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n408y"]
 size = Vector2(50, 50)
 
-[node name="Matching Item" type="RigidBody2D" node_paths=PackedStringArray("button")]
+[node name="Potion Item" type="RigidBody2D" node_paths=PackedStringArray("button") groups=["Potion"]]
+can_sleep = false
 lock_rotation = true
-script = ExtResource("1_vjgdo")
+script = ExtResource("1_lpi5a")
 button = NodePath("Button")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -19,8 +20,8 @@ shape = SubResource("RectangleShape2D_n408y")
 offset_right = 50.0
 offset_bottom = 50.0
 toggle_mode = true
-texture_normal = ExtResource("2_1tgal")
-texture_pressed = ExtResource("2_1tgal")
+texture_normal = ExtResource("2_qeqe6")
+texture_pressed = ExtResource("2_qeqe6")
 ignore_texture_size = true
 stretch_mode = 0
 

@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmk3vvsemrhmd"]
+
+[ext_resource type="Script" path="res://Classes/Medic/color_chooser.gd" id="1_6gw66"]
+
+[node name="Color Chooser" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("1_6gw66")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
