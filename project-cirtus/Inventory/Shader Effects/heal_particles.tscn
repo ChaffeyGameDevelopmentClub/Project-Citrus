@@ -29,6 +29,9 @@ point_count = 2
 curve = SubResource("Curve_k8fh6")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_sb8ox"]
+lifetime_randomness = 0.7
+angle_min = -223.4
+angle_max = 314.5
 orbit_velocity_min = -1.357
 orbit_velocity_max = -0.0929999
 radial_velocity_min = -34.49
@@ -47,6 +50,7 @@ shader = ExtResource("2_n4vip")
 
 [sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_s1fgq"]
 material = SubResource("ShaderMaterial_vtdvm")
+shape = 0
 
 [node name="RigidBody3D" type="RigidBody3D"]
 script = ExtResource("1_2qwdj")

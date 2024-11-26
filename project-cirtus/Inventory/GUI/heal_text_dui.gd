@@ -1,7 +1,7 @@
 extends Label
 
 func _process(delta: float) -> void:
-	position.y -= delta * 100
+	position.y -= delta * 120
 #quantity_label.text = "x%s" % slot_data.quantity
 func Heal_text(input:int) -> void:
 	self.text="%s" % input 
