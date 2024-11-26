@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://1w5wl0f3v0i1"]
+[gd_scene load_steps=38 format=3 uid="uid://1w5wl0f3v0i1"]
 
 [ext_resource type="MeshLibrary" uid="uid://l1wnhelltvv8" path="res://City TileSet/TS_CITY3.tres" id="1_nakns"]
 [ext_resource type="Script" path="res://Inventory/Scripts/main.gd" id="1_qlq65"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Inventory/Inventory Data/Inventory class/inventory_data_equip_armor.gd" id="4_7juqt"]
 [ext_resource type="Script" path="res://Inventory/Scripts/inv_interface.gd" id="4_smg6h"]
 [ext_resource type="PackedScene" uid="uid://bc8n7jfpeitso" path="res://Inventory/GUI/slot.tscn" id="6_e7b2k"]
+[ext_resource type="Script" path="res://Inventory/Inventory Data/Inventory class/inventory_data_equip_weapon.gd" id="6_hwk43"]
 [ext_resource type="PackedScene" uid="uid://dkr5qe2v225ib" path="res://Inventory/Objects/chest.tscn" id="7_8m3mk"]
 [ext_resource type="PackedScene" uid="uid://bwpieq5do7w1" path="res://Inventory/Objects/pick_up.tscn" id="7_jirhi"]
 [ext_resource type="Script" path="res://Inventory/Inventory Data/inventory_data.gd" id="8_a2pyt"]
@@ -29,6 +30,10 @@ glow_enabled = true
 
 [sub_resource type="Resource" id="Resource_yd378"]
 script = ExtResource("4_7juqt")
+slot_datas = Array[ExtResource("9_csb3s")]([null])
+
+[sub_resource type="Resource" id="Resource_1jtu7"]
+script = ExtResource("6_hwk43")
 slot_datas = Array[ExtResource("9_csb3s")]([null])
 
 [sub_resource type="Resource" id="Resource_v4xrv"]
@@ -141,6 +146,7 @@ data = {
 [node name="Test_Inventory" parent="InvTestWorld" instance=ExtResource("2_87uho")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.35857, 5.45767, -11.0916)
 equip_armor_data = SubResource("Resource_yd378")
+equip_weapon_data = SubResource("Resource_1jtu7")
 
 [node name="Camera3D" type="Camera3D" parent="InvTestWorld/Test_Inventory"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.56474)
@@ -160,9 +166,16 @@ script = ExtResource("4_smg6h")
 [node name="Player Inventory" parent="InvTestWorld/UI/Inv Interface" instance=ExtResource("3_4ix7s")]
 layout_mode = 0
 
-[node name="Equip Inventory2" parent="InvTestWorld/UI/Inv Interface" instance=ExtResource("3_4ix7s")]
+[node name="Equip Inventory Armor" parent="InvTestWorld/UI/Inv Interface" instance=ExtResource("3_4ix7s")]
 layout_mode = 0
 offset_top = 500.0
+offset_bottom = 524.0
+
+[node name="Equip Inventory Armor2" parent="InvTestWorld/UI/Inv Interface" instance=ExtResource("3_4ix7s")]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 500.0
+offset_right = 124.0
 offset_bottom = 524.0
 
 [node name="External Inventory" parent="InvTestWorld/UI/Inv Interface" instance=ExtResource("3_4ix7s")]

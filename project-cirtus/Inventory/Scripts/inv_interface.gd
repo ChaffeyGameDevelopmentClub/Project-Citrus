@@ -8,7 +8,8 @@ var external_inventory_owner
 @onready var player_inventory: PanelContainer = $"Player Inventory"
 @onready var grabbed_slot: PanelContainer = $GrabbedSlot
 @onready var external_inventory: PanelContainer = $"External Inventory"
-@onready var equip_inventory: PanelContainer = $"Equip Inventory2"
+@onready var equip_inventory: PanelContainer = $"Equip Inventory Armor"
+@onready var equip_inventory_weapon: PanelContainer = $"Equip Inventory Armor2"
 
 
 
@@ -17,6 +18,10 @@ func _physics_process(delta:float) -> void:
 	if grabbed_slot.visible:
 		grabbed_slot.global_position = get_global_mouse_position() + Vector2(5,5)
 
+func set_player_weapon_inventory_data(inventory_data: InventoryData) -> void:
+	inventory_data.inventory_interact.connect(on_inventory_interact)
+	equip_inventory_weapon.set_inventory_data(inventory_data)
+	pass
 
 func set_player_inventory_data(inventory_data: InventoryData) -> void:
 	inventory_data.inventory_interact.connect(on_inventory_interact)

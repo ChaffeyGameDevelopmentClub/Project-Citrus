@@ -13,6 +13,7 @@ var direction = 1
 
 #For armor and weapons 
 @export var equip_armor_data : InventoryDataEquipArmor
+@export var equip_weapon_data: InventoryDataEquipWeapon
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemDataEquipWeapon" load_steps=4 format=3 uid="uid://bmpn7nj1dh6tf"]
+
+[ext_resource type="Texture2D" uid="uid://byqrqjc5hv5yy" path="res://Inventory/Item Data/Item Textures/PNG/item.png" id="1_gaggo"]
+[ext_resource type="Script" path="res://Inventory/Inventory Data/Item Class/item_data_equip_weapon.gd" id="1_tcnwu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yt57v"]
+atlas = ExtResource("1_gaggo")
+region = Rect2(64, 64, 16, 16)
+
+[resource]
+script = ExtResource("1_tcnwu")
+attack = 10
+item_name = "Knife"
+item_description = "Looks sharp, don't run with that."
+is_item_stackable = false
+item_texture = SubResource("AtlasTexture_yt57v")
