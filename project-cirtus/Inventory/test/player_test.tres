@@ -1,55 +1,44 @@
-[gd_resource type="Resource" script_class="InventoryData" load_steps=18 format=3 uid="uid://drk4ionub4vsd"]
+[gd_resource type="Resource" script_class="InventoryData" load_steps=15 format=3 uid="uid://drk4ionub4vsd"]
 
 [ext_resource type="Script" path="res://Inventory/Inventory Data/inventory_data.gd" id="1_xaox7"]
 [ext_resource type="Script" path="res://Inventory/Inventory Data/slot_data.gd" id="2_p5efq"]
-[ext_resource type="Resource" uid="uid://yef2cvugpt5m" path="res://Inventory/Item Data/Master LIst/Null Function/test_item.tres" id="3_ape3m"]
-[ext_resource type="Resource" uid="uid://csn6veyfehpqh" path="res://Inventory/Item Data/Master LIst/Heal hp Function/test_heal.tres" id="4_rrcke"]
 [ext_resource type="Resource" uid="uid://bwn4aohn832rt" path="res://Inventory/Item Data/Master LIst/Armor function/book.tres" id="5_6c4oe"]
-[ext_resource type="Resource" uid="uid://bij2ajrabu5og" path="res://Inventory/Item Data/Master LIst/Null Function/test_item2.tres" id="5_xl351"]
-[ext_resource type="Resource" uid="uid://c4y4kx7lgst4l" path="res://Inventory/Item Data/Master LIst/Null Function/test_item3.tres" id="6_qgqxk"]
+[ext_resource type="Resource" uid="uid://d4nhnejg45gmv" path="res://Inventory/Item Data/Master LIst/Heal hp Function/Red_Potion.tres" id="5_y856k"]
+[ext_resource type="Resource" uid="uid://c1mc0clcgi7jk" path="res://Inventory/Item Data/Master LIst/Heal hp Function/Purple_Potion.tres" id="6_4ivpk"]
+[ext_resource type="Resource" uid="uid://dv25e5bo6omaq" path="res://Inventory/Item Data/Master LIst/Heal hp Function/Pink_Poition.tres" id="7_4j28t"]
 [ext_resource type="Resource" uid="uid://bmpn7nj1dh6tf" path="res://Inventory/Item Data/Master LIst/Weapon function/knife.tres" id="7_dhf8k"]
-[ext_resource type="Resource" uid="uid://c1gx3yvdrmfor" path="res://Inventory/Item Data/Master LIst/Null Function/test_item4.tres" id="7_x4p15"]
+[ext_resource type="Resource" uid="uid://djvn1sc0qv8n1" path="res://Inventory/Item Data/Master LIst/Null Function/Null_For_Now.tres" id="8_7qlyd"]
 
-[sub_resource type="Resource" id="Resource_m7c81"]
-script = ExtResource("2_p5efq")
-item_data = ExtResource("3_ape3m")
-quantity = 1
-
-[sub_resource type="Resource" id="Resource_ebbkx"]
-script = ExtResource("2_p5efq")
-item_data = ExtResource("4_rrcke")
-quantity = 40
-
-[sub_resource type="Resource" id="Resource_dabfo"]
-script = ExtResource("2_p5efq")
-item_data = ExtResource("5_6c4oe")
-quantity = 1
-
-[sub_resource type="Resource" id="Resource_h3ojs"]
-script = ExtResource("2_p5efq")
-item_data = ExtResource("5_xl351")
-quantity = 7
-
-[sub_resource type="Resource" id="Resource_vedou"]
-script = ExtResource("2_p5efq")
-item_data = ExtResource("5_xl351")
-quantity = 10
-
-[sub_resource type="Resource" id="Resource_b7t38"]
+[sub_resource type="Resource" id="Resource_wgt1v"]
 script = ExtResource("2_p5efq")
 item_data = ExtResource("7_dhf8k")
 quantity = 1
 
-[sub_resource type="Resource" id="Resource_jn2s8"]
+[sub_resource type="Resource" id="Resource_f0pim"]
 script = ExtResource("2_p5efq")
-item_data = ExtResource("6_qgqxk")
+item_data = ExtResource("5_6c4oe")
 quantity = 1
 
-[sub_resource type="Resource" id="Resource_1j5oj"]
+[sub_resource type="Resource" id="Resource_ykpkt"]
 script = ExtResource("2_p5efq")
-item_data = ExtResource("7_x4p15")
-quantity = 99
+item_data = ExtResource("5_y856k")
+quantity = 20
+
+[sub_resource type="Resource" id="Resource_gaakx"]
+script = ExtResource("2_p5efq")
+item_data = ExtResource("7_4j28t")
+quantity = 20
+
+[sub_resource type="Resource" id="Resource_5v0ug"]
+script = ExtResource("2_p5efq")
+item_data = ExtResource("8_7qlyd")
+quantity = 30
+
+[sub_resource type="Resource" id="Resource_wd3q2"]
+script = ExtResource("2_p5efq")
+item_data = ExtResource("6_4ivpk")
+quantity = 30
 
 [resource]
 script = ExtResource("1_xaox7")
-slot_datas = Array[ExtResource("2_p5efq")]([SubResource("Resource_m7c81"), SubResource("Resource_ebbkx"), SubResource("Resource_dabfo"), SubResource("Resource_h3ojs"), SubResource("Resource_vedou"), SubResource("Resource_b7t38"), null, SubResource("Resource_jn2s8"), SubResource("Resource_1j5oj"), null, null, null, null, null, null, null, null, null, null, null])
+slot_datas = Array[ExtResource("2_p5efq")]([SubResource("Resource_wgt1v"), SubResource("Resource_f0pim"), SubResource("Resource_ykpkt"), SubResource("Resource_gaakx"), SubResource("Resource_5v0ug"), SubResource("Resource_wd3q2"), null, null, null, null, null, null, null, null, null, null, null, null, null, null])
