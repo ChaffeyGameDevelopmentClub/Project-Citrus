@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://bev01y2isux14"]
+
+[ext_resource type="Texture2D" uid="uid://bhi87mh0gi6g7" path="res://Inventory/Objects/can interact.png" id="1_2sjou"]
+[ext_resource type="Script" path="res://Inventory/Scripts/interactable_indicator.gd" id="2_rqs1y"]
+
+[sub_resource type="Animation" id="Animation_bh5qk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_xnln7"]
+resource_name = "interactable"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 6.28319, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j45tx"]
+_data = {
+"RESET": SubResource("Animation_bh5qk"),
+"interactable": SubResource("Animation_xnln7")
+}
+
+[node name="Interactable" type="Sprite3D"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 1.31754, 0)
+texture_filter = 0
+texture = ExtResource("1_2sjou")
+script = ExtResource("2_rqs1y")
+
+[node name="Spin" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_j45tx")
+}

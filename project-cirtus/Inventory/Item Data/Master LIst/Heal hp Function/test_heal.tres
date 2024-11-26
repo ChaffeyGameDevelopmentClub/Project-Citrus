@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ItemDataConsumable" load_steps=4 format=3 uid="uid://csn6veyfehpqh"]
+
+[ext_resource type="Script" path="res://Inventory/Inventory Data/Item Class/item_data_consumable.gd" id="1_2mtbj"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nondb"]
+load_path = "res://.godot/imported/test-inventory.png-60335ecacea86239aee9067d8656d9ff.s3tc.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vlmon"]
+atlas = SubResource("CompressedTexture2D_nondb")
+region = Rect2(32, 64, 32, 32)
+
+[resource]
+script = ExtResource("1_2mtbj")
+heal_value = 1
+item_name = "Healer Orb"
+item_description = "Heals you real good"
+is_item_stackable = true
+item_texture = SubResource("AtlasTexture_vlmon")

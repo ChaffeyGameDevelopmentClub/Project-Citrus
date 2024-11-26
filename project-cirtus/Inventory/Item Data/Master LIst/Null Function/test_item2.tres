@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://bij2ajrabu5og"]
+
+[ext_resource type="Texture2D" uid="uid://clrxpsb4sgt7d" path="res://Inventory/Item Data/Item Textures/Atlas/items_image.tres" id="1_qm06m"]
+[ext_resource type="Script" path="res://Inventory/Inventory Data/item_data.gd" id="2_0scjw"]
+
+[resource]
+script = ExtResource("2_0scjw")
+item_name = "test2"
+item_description = "Don't use this"
+is_item_stackable = true
+item_texture = ExtResource("1_qm06m")

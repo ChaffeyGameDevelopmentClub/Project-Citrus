@@ -2,27 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvmlp5nxb2rer"
-path.s3tc="res://.godot/imported/icon_bg.png-5937ce0a857c4a8a9d624ea9ebf09a97.s3tc.ctex"
+uid="uid://b1up0domrkaha"
+path="res://.godot/imported/benny.png-78d382bc2c7a3bb5e16625f372f8281e.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/dialogic/Editor/HomePage/icon_bg.png"
-dest_files=["res://.godot/imported/icon_bg.png-5937ce0a857c4a8a9d624ea9ebf09a97.s3tc.ctex"]
+source_file="res://Inventory/Item Data/Item Textures/PNG/benny.png"
+dest_files=["res://.godot/imported/benny.png-78d382bc2c7a3bb5e16625f372f8281e.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -32,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
