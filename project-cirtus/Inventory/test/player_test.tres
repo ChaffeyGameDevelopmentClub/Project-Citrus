@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="InventoryData" load_steps=15 format=3 uid="uid://drk4ionub4vsd"]
+[gd_resource type="Resource" script_class="InventoryData" load_steps=17 format=3 uid="uid://drk4ionub4vsd"]
 
 [ext_resource type="Script" path="res://Inventory/Inventory Data/inventory_data.gd" id="1_xaox7"]
 [ext_resource type="Script" path="res://Inventory/Inventory Data/slot_data.gd" id="2_p5efq"]
@@ -8,6 +8,7 @@
 [ext_resource type="Resource" uid="uid://dv25e5bo6omaq" path="res://Inventory/Item Data/Master LIst/Heal hp Function/Pink_Poition.tres" id="7_4j28t"]
 [ext_resource type="Resource" uid="uid://bmpn7nj1dh6tf" path="res://Inventory/Item Data/Master LIst/Weapon function/knife.tres" id="7_dhf8k"]
 [ext_resource type="Resource" uid="uid://djvn1sc0qv8n1" path="res://Inventory/Item Data/Master LIst/Null Function/Null_For_Now.tres" id="8_7qlyd"]
+[ext_resource type="Resource" uid="uid://bai6v4kg8y1m2" path="res://Inventory/Item Data/Master LIst/Null Function/benny weapon.tres" id="9_8hbmj"]
 
 [sub_resource type="Resource" id="Resource_wgt1v"]
 script = ExtResource("2_p5efq")
@@ -39,6 +40,11 @@ script = ExtResource("2_p5efq")
 item_data = ExtResource("6_4ivpk")
 quantity = 30
 
+[sub_resource type="Resource" id="Resource_agw24"]
+script = ExtResource("2_p5efq")
+item_data = ExtResource("9_8hbmj")
+quantity = 1
+
 [resource]
 script = ExtResource("1_xaox7")
-slot_datas = Array[ExtResource("2_p5efq")]([SubResource("Resource_wgt1v"), SubResource("Resource_f0pim"), SubResource("Resource_ykpkt"), SubResource("Resource_gaakx"), SubResource("Resource_5v0ug"), SubResource("Resource_wd3q2"), null, null, null, null, null, null, null, null, null, null, null, null, null, null])
+slot_datas = Array[ExtResource("2_p5efq")]([SubResource("Resource_wgt1v"), SubResource("Resource_f0pim"), SubResource("Resource_ykpkt"), SubResource("Resource_gaakx"), SubResource("Resource_5v0ug"), SubResource("Resource_wd3q2"), SubResource("Resource_agw24"), null, null, null, null, null, null, null, null, null, null, null, null, null])

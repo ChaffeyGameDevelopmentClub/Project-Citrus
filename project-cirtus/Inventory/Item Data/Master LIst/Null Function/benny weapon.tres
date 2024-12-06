@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemDataEquipWeapon" load_steps=3 format=3 uid="uid://bai6v4kg8y1m2"]
+
+[ext_resource type="Script" path="res://Inventory/Inventory Data/Item Class/item_data_equip_weapon.gd" id="1_2g2lk"]
+[ext_resource type="Texture2D" uid="uid://db7td1b3oc51u" path="res://Inventory/Item Data/Item Textures/Atlas/benny.tres" id="1_2yb51"]
+
+[resource]
+script = ExtResource("1_2g2lk")
+attack = 0
+item_name = "Benny Weapobn"
+item_description = "Benny"
+is_item_stackable = false
+item_texture = ExtResource("1_2yb51")

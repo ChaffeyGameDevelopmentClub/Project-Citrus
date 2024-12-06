@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bsa7brjifo1e5"]
+[gd_scene load_steps=14 format=3 uid="uid://bsa7brjifo1e5"]
 
 [ext_resource type="Script" path="res://Inventory/Shader Effects/heal_particles.gd" id="1_2qwdj"]
 [ext_resource type="Shader" path="res://Inventory/Shader Effects/heal_particles.gdshader" id="2_n4vip"]
@@ -52,6 +52,8 @@ shader = ExtResource("2_n4vip")
 material = SubResource("ShaderMaterial_vtdvm")
 shape = 0
 
+[sub_resource type="Skin" id="Skin_1aexn"]
+
 [node name="RigidBody3D" type="RigidBody3D"]
 script = ExtResource("1_2qwdj")
 
@@ -61,13 +63,14 @@ disabled = true
 
 [node name="HealParticles" type="GPUParticles3D" parent="."]
 emitting = false
-amount = 100
+amount = 20000
 one_shot = true
 explosiveness = 1.0
 randomness = 1.0
 trail_lifetime = 0.1
 process_material = SubResource("ParticleProcessMaterial_sb8ox")
 draw_pass_1 = SubResource("RibbonTrailMesh_s1fgq")
+draw_skin = SubResource("Skin_1aexn")
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
